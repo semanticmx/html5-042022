@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Canvas Ejemplo</title>
+  <script>
+  function supports_h264_baseline_video() {
+  if (!supports_video()) { return false; }
+  var v = document.createElement("video");
+  return v.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
+}
+  </script>
+</head>
+<body>
+  <p>El "idioma" de un video se llama "códec": este es el algoritmo utilizado para codificar el video en una secuencia de bits. Hay docenas de códecs en uso en todo</br> 
+    el mundo. ¿Cual deberías usar? La desafortunada realidad del video HTML5 es que los navegadores no pueden ponerse de acuerdo sobre un solo códec. Sin embargo,</br>
+    parece que lo han reducido a dos. Un códec cuesta dinero (debido a la licencia de patente), pero funciona en Safari y en el iPhone. (¡Este también funciona en</br> 
+    Flash si usa una solución como Video for Everybody! ) El otro códec es gratuito y funciona en navegadores de código abierto como Chromium y Mozilla Firefox .</p>
+
+<p> La comprobación de la compatibilidad con el formato de vídeo utiliza la técnica de detección n.º 3 . Si su navegador admite video HTML5 , el objeto DOM que crea
+  para representar un <video>elemento tendrá un canPlayType()método. Este método le dirá si el navegador admite un formato de video en particular.</p>
+</body>
+</html>
