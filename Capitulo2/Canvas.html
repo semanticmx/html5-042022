@@ -15,5 +15,8 @@ function supports_canvas() {
     gráficos, gráficos de juegos u otras imágenes visuales sobre la marcha". Un lienzo es un rectángulo en su página donde puede usar JavaScript</br> 
     para dibujar lo que quiera. HTML5 define un conjunto de funciones ("la API de lienzo ") para dibujar formas, definir rutas, crear degradados 
     y aplicar transformaciones.</p>
+  <p>La verificación de la API de lienzo utiliza la técnica de detección #2 . Si su navegador admite la API de lienzo , el objeto DOM que crea para representar un</br> 
+    <canvas>elemento tendrá un getContext()método . Si su navegador no admite la API de lienzo , el objeto DOM que crea para un <canvas>elemento solo tendrá el conjunto</br>
+      de propiedades comunes, pero nada específico del lienzo.</p>
 </body>
 </html>
