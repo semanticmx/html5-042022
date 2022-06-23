@@ -2,13 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8">
-  function supports_canvas() {
-  return !!document.createElement('canvas').getContext;
-  }
+  
   <title>Canvas Ejemplo</title>
+  <SCRIPT> 
+function supports_canvas() {
+  return !!document.createElement('canvas').getContext;
+  } 
+</SCRIPT>
 </head>
 <body>
-  <p>HTML5 define el elemento '<canvas>' como "un lienzo de mapa de bits dependiente de la resolución que se puede usar para representar</br>
+  <p>HTML5 define el elemento 'canvas' como "un lienzo de mapa de bits dependiente de la resolución que se puede usar para representar</br>
     gráficos, gráficos de juegos u otras imágenes visuales sobre la marcha". Un lienzo es un rectángulo en su página donde puede usar JavaScript</br> 
     para dibujar lo que quiera. HTML5 define un conjunto de funciones ("la API de lienzo ") para dibujar formas, definir rutas, crear degradados 
     y aplicar transformaciones.</p>
