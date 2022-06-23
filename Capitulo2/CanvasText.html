@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Canvas Ejemplo</title>
+  <script>
+    function supports_canvas_text() {
+  if (!supports_canvas()) { return false; }
+  var dummy_canvas = document.createElement('canvas');
+  var context = dummy_canvas.getContext('2d');
+  return typeof context.fillText == 'function';
+}
+  </script>
+</head>
+<body>
+  <p>La verificación de la API de texto de lienzo utiliza la técnica de detección #2 . Si su navegador admite la API de lienzo , el objeto DOM que crea para representar</br>
+    un canvas elemento tendrá el getContext()método . Si su navegador no admite la API de lienzo , el objeto DOM que crea para un canvas elemento solo tendrá el </br>
+    conjunto de propiedades comunes, pero nada específico del lienzo</p>
+</body>
+</html>
