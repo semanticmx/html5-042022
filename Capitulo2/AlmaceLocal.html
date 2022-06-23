@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Canvas Ejemplo</title>
+  <script>
+  function supports_local_storage() {
+  try {
+    return 'localStorage' in window && window['localStorage'] !== null;
+  } catch(e){
+    return false;
+  }
+}
+  </script>
+</head>
+<body>
+  <p>El almacenamiento HTML5 proporciona una forma para que los sitios web almacenen información en su computadora y la recuperen más tarde. El concepto es similar a las</br>
+    cookies, pero está diseñado para grandes cantidades de información. Las cookies tiene un tamaño limitado y su navegador las envía de regreso al servidor web cada vez</br>
+    que solicita una nueva página (lo que requiere más tiempo y un valioso ancho de banda).</p>
+<p>La comprobación de la compatibilidad con el almacenamiento de HTML5 utiliza la técnica de detección n.º 1 . Si su navegador admite almacenamiento HTML5 , habrá una</br>
+  localStoragepropiedad en el objeto global window. Si su navegador no es compatible con el almacenamiento de HTML5localStorage , la propiedad no estará definida.</p>
+</body>
+</html>
