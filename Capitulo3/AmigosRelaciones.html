@@ -1,0 +1,93 @@
+<!DOCTYPE html><!--Este es el tipo de documento HTML5 , que es más breve y sencillo y 
+	también activa el "modo estándar" en todos los navegadores modernos.-->
+	<html>
+	<!--  <!DOCTYPE html
+	      PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
+<html>
+<head>
+	<title>Que sigifica todo Esto</title>
+</head>
+<meta charset="utf-8" />
+<body>
+	<h1>Amigos y Relaciones</h1>
+	<p>Los enlaces regulares ( a href) simplemente apuntan a otra página. Las relaciones de enlace son una forma de explicar por qué </br>
+  estás apuntando a otra página. Terminan la frase “Estoy señalando esta otra página porque:”</br>
+
+     es una hoja de estilo que contiene reglas CSS que su navegador debería aplicar a este documento.</br>
+     es un feed que contiene el mismo contenido que esta página, pero en un formato de suscripción estándar.</br>
+     es una traducción de esta página a otro idioma.</br>
+     es el mismo contenido que esta página, pero en formato PDF.</br>
+     es el próximo capítulo de un libro en línea del cual esta página también forma parte.
+	</p>
+	<p>Y así. HTML5 divide las relaciones de enlace en dos categorías :</br>
+
+    Se pueden crear dos categorías de enlaces utilizando el elemento de enlace. Los enlaces a recursos externos son enlaces a recursos que</br>
+    se utilizarán para aumentar el documento actual, y los enlaces de hipervínculo son enlaces a otros documentos.</br>
+    De los ejemplos anteriores, solo el primero ( rel="stylesheet") es un enlace a un recurso externo. El resto son hipervínculos a </br>
+    otros documentos. Es posible que desee seguir esos enlaces, o puede que no, pero no son necesarios para ver la página actual.</p>
+    
+    <p> REL = HOJA DE ESTILO</br>
+    link rel="stylesheet" href="style-original.css" type="text/css" </br>
+    Esta es la relación de enlace más utilizada en el mundo (literalmente). link rel="stylesheet" es para apuntar a las reglas CSS que se</br>
+    almacenan en un archivo separado. Una pequeña optimización que puede hacer en HTML5 es eliminar el typeatributo. Solo hay un </br>
+    lenguaje de hoja de estilo para la web, CSS , por lo que ese es el valor predeterminado para el typeatributo. Esto funciona en todos </br>
+    los navegadores. (Supongo que alguien podría inventar un nuevo lenguaje de hoja de estilo algún día, pero si eso sucede, simplemente typevuelva a agregar el atributo).</br>
+
+    link rel="stylesheet" href="style-original.css"	
+    </p>
+
+    <p>
+    REL = ALTERNATIVO</br>
+
+    link rel="alternate"</br>
+       type="application/atom+xml"</br>
+       title="My Weblog feed"</br>
+       href="/feed/" </br>
+    Esta relación de enlace también es bastante común. link rel="alternate", combinado con el tipo de medio RSS o Atom en el typeatributo, </br>
+    habilita algo llamado "detección automática de fuentes". Permite a los lectores de fuentes sindicadas (como Google Reader )</br>
+    descubrir que un sitio tiene una fuente de noticias con los artículos más recientes. Algunos navegadores también admiten la detección</br>
+    automática de feeds al mostrar un icono especial junto a la URL . (A diferencia de rel="stylesheet", el typeatributo importa aquí.
+    </p>
+    <p>La rel="alternate"relación de enlace siempre ha sido un extraño híbrido de casos de uso, incluso en HTML 4 . En HTML5 , su</br>
+    definición se ha aclarado y ampliado para describir con mayor precisión el contenido web existente. Como acaba de ver, el uso</br> 
+    rel="alternate"junto con type=application/atom+xmlindica un feed Atom para la página actual.</br>
+    HTML5 también pone fin a una confusión de larga data sobre cómo vincular a traducciones de documentos. HTML 4 dice que use el</br> 
+    langatributo junto con rel="alternate"para especificar el idioma del documento vinculado, pero esto es incorrecto.</p>
+
+    <h1>OTRAS RELACIONES DE ENLACES EN HTML5</h1>
+    
+    <p>rel="author"se utiliza para enlazar a información sobre el autor de la página. Puede ser una mailto:dirección, aunque no tiene por</br>
+    qué serlo. Simplemente podría vincular a un formulario de contacto o a una página "sobre el autor".</p>
+
+    <p>rel="icon" es la segunda relación de enlace más popular , después de rel="stylesheet". Por lo general, se encuentra junto con shortcut, así:</br>
+
+      link rel="shortcut icon" href="/favicon.ico"</br>
+    Todos los principales navegadores admiten este uso para asociar un pequeño icono con la página. Por lo general, se muestra en la barra</br>
+    de ubicación del navegador junto a la URL, en la pestaña del navegador o en ambas.</p>
+
+
+	<p>rel="license" fue inventado por la comunidad de microformatos . “Indica que el documento al que se hace referencia proporciona los</br>
+  términos de la licencia de derechos de autor bajo los cuales se proporciona el documento actual”.</p>
+
+	<p>rel="nofollow" "indica que el enlace no está respaldado por el autor original o el editor de la página, o que el enlace al documento</br>
+  al que se hace referencia se incluyó principalmente debido a una relación comercial entre las personas afiliadas a las dos páginas". </p>
+
+	<p>rel="noreferrer" "indica que no se filtrará información de referencia al seguir el enlace". WebKit es compatible con</br> 
+  rel="noreferrer" , por lo que funciona en Google Chome y Safari </p>
+    
+    <p>rel="prefetch" "indica que es probable que obtener y almacenar en caché de manera preventiva el recurso especificado sea</br>
+    beneficioso, ya que es muy probable que el usuario requiera este recurso". Los motores de búsqueda a veces agregan a la página de</br>
+    resultados de búsqueda si sienten que el resultado principal es mucho más popular que cualquier otro.</p>
+
+
+    <p>rel="buscar" "indica que el documento al que se hace referencia proporciona una interfaz específica para buscar el documento y sus</br> 
+    recursos relacionados". Específicamente, si desea rel="search"hacer algo útil, debe apuntar a un documento de OpenSearch que</br>
+    describe cómo un navegador podría construir una URL para buscar una palabra clave determinada en el sitio actual.</p>
+    
+    <p>rel="tag" "indica que la etiqueta que representa el documento al que se hace referencia se aplica al documento actual". Technorati</br> 
+    inventó el marcado de "etiquetas" (palabras clave de categoría) con el relatributo para ayudarlos a categorizar las publicaciones de blog.</p>
+
+</body>
+</html>
+
