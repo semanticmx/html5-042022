@@ -1,39 +1,50 @@
 <!DOCTYPE html><!--Este es el tipo de documento HTML5 , que es más breve y sencillo y 
 	también activa el "modo estándar" en todos los navegadores modernos.-->
-	<html>
-	<!--  <!DOCTYPE html
-	      PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
 <html>
+	<!--  <!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
+
 <head>
-  <meta charset="utf-8" />
+         <meta charset="utf-8" />
+	
 	  <title>Que sigifica todo Esto</title>
 </head>
 <body>
 	<h1>CODIFICACIÓN DE CARACTERES</h1>
-	<p>Cuando piensas en "texto", probablemente piensas en "caracteres y símbolos que veo en la pantalla de mi computadora". Pero las</br> 
-  computadoras no manejan caracteres y símbolos; negocian en bits y bytes. Cada fragmento de texto que haya visto en la pantalla de una</br>
-  computadora se almacena en una codificación de caracteres particular . Hay cientos de codificaciones de caracteres diferentes,</br>
-  algunas optimizadas para idiomas particulares como el ruso, el chino o el inglés, y otras que se pueden usar para varios idiomas. En</br>
-  términos generales, la codificación de caracteres proporciona un mapeo entre las cosas que ve en su pantalla y las cosas que su</br>
-  computadora realmente almacena en la memoria y en el disco. 
+	
+	<p>
+	    Cuando piensas en "texto", probablemente piensas en "caracteres y símbolos que veo en la pantalla de mi computadora". Pero las</br> 
+            computadoras no manejan caracteres y símbolos; negocian en bits y bytes. Cada fragmento de texto que haya visto en la pantalla de una</br>
+            computadora se almacena en una codificación de caracteres particular . Hay cientos de codificaciones de caracteres diferentes,</br>
+            algunas optimizadas para idiomas particulares como el ruso, el chino o el inglés, y otras que se pueden usar para varios idiomas. En</br>
+            términos generales, la codificación de caracteres proporciona un mapeo entre las cosas que ve en su pantalla y las cosas que su</br>
+            computadora realmente almacena en la memoria y en el disco. 
 	</p>
-	<p>Entonces, ¿cómo determina realmente su navegador la codificación de caracteres del flujo de bytes que envía un servidor web? Me</br> 
-  alegra que hayas preguntado. Si está familiarizado con los encabezados HTTP , es posible que haya visto un encabezado como este:</br>
-	Content-Type: text/html; charset="utf-8"</p>
 
-	<p>Brevemente, esto dice que el servidor web cree que le está enviando un documento HTML y que cree que el documento utiliza la</br>
-  UTF-8codificación de caracteres. Desafortunadamente, en toda la magnífica sopa de la World Wide Web, pocos autores realmente tienen</br>
-  control sobre su servidor HTTP. Piense en Blogger : el contenido es proporcionado por individuos, pero los servidores son</br>
-  administrados por Google. Entonces, HTML 4 proporcionó una forma de especificar la codificación de caracteres en el propio documento</br> 
-  HTML . Probablemente también hayas visto esto:</br>
 
-    meta http-equiv="Content-Type" content="text/html; charset=utf-8"</p>
+	<p>
+	     Entonces, ¿cómo determina realmente su navegador la codificación de caracteres del flujo de bytes que envía un servidor web? Me</br> 
+             alegra que hayas preguntado. Si está familiarizado con los encabezados HTTP , es posible que haya visto un encabezado como este:</br>
+	     Content-Type: text/html; charset="utf-8"
+        </p>
 
-    <p>El encabezado HTTP es el método preferido y anula la meta etiqueta, si está presente. Pero no todos pueden establecer encabezados</br> 
-    HTTP , por lo que la meta etiqueta aún existe. De hecho, se volvió un poco más fácil en HTML5 . Ahora se ve así:</br>
 
-    meta charset="utf-8" /</p>
+	<p>
+	      Brevemente, esto dice que el servidor web cree que le está enviando un documento HTML y que cree que el documento utiliza la</br>
+              UTF-8codificación de caracteres. Desafortunadamente, en toda la magnífica sopa de la World Wide Web, pocos autores realmente tienen</br>
+              control sobre su servidor HTTP. Piense en Blogger : el contenido es proporcionado por individuos, pero los servidores son</br>
+              administrados por Google. Entonces, HTML 4 proporcionó una forma de especificar la codificación de caracteres en el propio documento</br> 
+              HTML . Probablemente también hayas visto esto:</br> 
+              meta http-equiv="Content-Type" content="text/html; charset=utf-8"
+         </p>
+
+
+         <p>
+	      El encabezado HTTP es el método preferido y anula la meta etiqueta, si está presente. Pero no todos pueden establecer encabezados</br> 
+              HTTP , por lo que la meta etiqueta aún existe. De hecho, se volvió un poco más fácil en HTML5 . Ahora se ve así:</br>
+              meta charset="utf-8" 
+         </p>
 
 </body>
 </html>
