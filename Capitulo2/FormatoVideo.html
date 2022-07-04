@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Canvas Ejemplo</title>
+  <script>
+  function supports_h264_baseline_video() {
+  if (!supports_video()) { return false; }
+  var v = document.createElement("video");
+  return v.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
+  }
+  function supports_ogg_theora_video() {
+  if (!supports_video()) { return false; }
+  var v = document.createElement("video");
+  return v.canPlayType('video/ogg; codecs="theora, vorbis"');
+
+   }
+    function supports_webm_video() {
+  if (!supports_video()) { return false; }
+  var v = document.createElement("video");
+  return v.canPlayType('video/webm; codecs="vp8, vorbis"');
+  }
+  </script>
+</head>
+<body>
+  <p>El "idioma" de un video se llama "códec": este es el algoritmo utilizado para codificar el video en una secuencia de bits. Hay docenas de códecs en uso en todo</br> 
+    el mundo. ¿Cual deberías usar? La desafortunada realidad del video HTML5 es que los navegadores no pueden ponerse de acuerdo sobre un solo códec. Sin embargo,</br>
+    parece que lo han reducido a dos. Un códec cuesta dinero (debido a la licencia de patente), pero funciona en Safari y en el iPhone. (¡Este también funciona en</br> 
+    Flash si usa una solución como Video for Everybody! ) El otro códec es gratuito y funciona en navegadores de código abierto como Chromium y Mozilla Firefox .</p>
+
+<p> La comprobación de la compatibilidad con el formato de vídeo utiliza la técnica de detección n.º 3 . Si su navegador admite video HTML5 , el objeto DOM que crea
+  para representar un video elemento tendrá un canPlayType()método. Este método le dirá si el navegador admite un formato de video en particular.</p>
+  
+<p>Esta segunda función verifica el formato de video abierto compatible con Mozilla Firefox y otros navegadores de código abierto. El proceso es exactamente el mismo;</br>
+  la única diferencia es la cadena que pasa a la canPlayType()función. En términos técnicos, le estás preguntando al navegador si puede reproducir video de Theora y</br>
+  audio de Vorbis en un contenedor Ogg.</p>
+<p>Finalmente, WebM es un nuevo códec de video de código abierto (y sin patente) que se incluirá en la próxima versión de los principales navegadores, incluidos Chrome,</br> 
+  Firefox y Opera . Puede usar la misma técnica para detectar soporte para video WebM abierto.</p>
+</body>
+</html>

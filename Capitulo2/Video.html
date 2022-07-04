@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Canvas Ejemplo</title>
+  <script>
+    function supports_video() {
+  return !!document.createElement('video').canPlayType;
+}
+  </script>
+</head>
+<body>
+  <p>El video elemento está diseñado para que se pueda utilizar sin scripts de detección. Puede especificar varios archivos de video, y</br>
+    los navegadores que admiten video HTML5 elegirán uno en función de los formatos de video que admitan. </p>
+  <p>Los navegadores que no son compatibles con el video HTML5 ignorarán el video elemento por completo, pero puede usar esto a su favor 
+    y decirles que reproduzcan el video a través de un complemento de terceros.</p>
+  <p>Si desea hacer más con el video que colocarlo en su página y reproducirlo, deberá usar JavaScript. La verificación del soporte de video usa la técnica de 
+    detección #2 . Si su navegador admite video HTML5 , el objeto DOM que crea para representar un video elemento tendrá un canPlayType()método. Si su navegador
+    no admite video HTML5 , el objeto  DOM que crea para un video elemento solo tendrá el conjunto de propiedades comunes a todos los elementos. Puede verificar
+    si hay soporte de video usando esta función</p>
+
+</body>
+</html>

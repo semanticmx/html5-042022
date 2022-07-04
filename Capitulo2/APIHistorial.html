@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Canvas Ejemplo</title>
+  <script>
+    function supports_history_api() {
+  return !!(window.history && history.pushState);
+}
+  </script>
+</head>
+<body>
+  <p>La API de historial de HTML5 es una forma estandarizada de manipular el historial del navegador a través de un script. Parte de esta API (navegar por el historial)</br>
+    ha estado disponible en versiones anteriores de HTML . La nueva parte en HTML5 es una forma de agregar entradas al historial del navegador y responder cuando el</br> 
+    usuario elimina esas entradas de la pila presionando el botón Atrás del navegador.</p>
+  <p>La comprobación de la compatibilidad con la API del historial de HTML5 utiliza la técnica de detección n.º 1 . Si su navegador es compatible con la API de</br>
+    historial de HTML5 , habrá una función en el objeto global . Si su navegador no es compatible con la API de historial , la función no estará definida.</br> 
+    pushState()historypushState()</p>
+</body>
+</html>
