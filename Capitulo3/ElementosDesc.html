@@ -14,9 +14,9 @@
 	<script>document.createElement("article");</script>
 
 
-	<!--[if lt IE 9]>
-     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-     <![endif]-->
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
 </head>
 <body>
@@ -25,66 +25,67 @@
 
 
 	<p>
-	Cada navegador tiene una lista maestra de elementos HTML que admite. Por ejemplo, la lista de Mozilla Firefox se</br>
-  almacena en nsElementTable.cpp . Los elementos que no están en esta lista se tratan como "elementos desconocidos". Hay</br>
-  dos problemas fundamentales con los elementos desconocidos:</p>
+	    Cada navegador tiene una lista maestra de elementos HTML que admite. Por ejemplo, la lista de Mozilla Firefox se</br>
+            almacena en nsElementTable.cpp . Los elementos que no están en esta lista se tratan como "elementos desconocidos". Hay</br>
+            dos problemas fundamentales con los elementos desconocidos:
+        </p>
 
 
 	<h1> ¿Cómo se debe diseñar el elemento?</h1> 
 
 
 	<p>
-		De forma predeterminada, <p>tiene espacios en la parte superior e inferior, blockquote sangría con un margen izquierdo</br>
-    y h1 se muestra en una fuente más grande. Pero, ¿qué estilos predeterminados se deben aplicar a los elementos desconocidos?</p> 
+            De forma predeterminada, <p>tiene espacios en la parte superior e inferior, blockquote sangría con un margen izquierdo</br>
+            y h1 se muestra en una fuente más grande. Pero, ¿qué estilos predeterminados se deben aplicar a los elementos desconocidos?
+        </p> 
 
 	<h1>¿Cómo debería ser el DOM del elemento?</h1>  
-	<p>
-
-		Mozilla nsElementTable.cppincluye información sobre qué tipo de otros elementos</br>
-    puede contener cada elemento. Si incluye marcado como p , el segundo elemento de párrafo cierra implícitamente</br>
-    el primero, por lo que los elementos terminan como hermanos, no como padre e hijo. Pero si escribe p span, spanno</br>
-    cierra el párrafo, porque Firefox sabe que p es un elemento de bloque que puede contener el elemento en línea span.</br>
-    Entonces, span termina como un hijo de p en el DOM.</br>
-	  Los diferentes navegadores responden a estas preguntas de diferentes maneras.</p>
-
 
 	<p>
+	   Mozilla nsElementTable.cppincluye información sobre qué tipo de otros elementos</br>
+           puede contener cada elemento. Si incluye marcado como p , el segundo elemento de párrafo cierra implícitamente</br>
+           el primero, por lo que los elementos terminan como hermanos, no como padre e hijo. Pero si escribe p span, spanno</br>
+           cierra el párrafo, porque Firefox sabe que p es un elemento de bloque que puede contener el elemento en línea span.</br>
+           Entonces, span termina como un hijo de p en el DOM.</br>
+	   Los diferentes navegadores responden a estas preguntas de diferentes maneras.
+        </p>
 
-	Hay varios elementos nuevos definidos en HTML5 que son elementos a nivel de bloque. Es decir, pueden contener otros</br>
-  elementos a nivel de bloque, y los navegadores compatibles con HTML5 los diseñarán display:blockde forma </br>
-  predeterminada. Si desea utilizar estos elementos en navegadores más antiguos, deberá definir el estilo de visualización manualmente:</br>
 
-	article,aside,details,figcaption,figure,
-	footer,header,hgroup,menu,nav,section {
-	display:block;
-    }
-    </p>
+	<p>
+	   Hay varios elementos nuevos definidos en HTML5 que son elementos a nivel de bloque. Es decir, pueden contener otros</br>
+           elementos a nivel de bloque, y los navegadores compatibles con HTML5 los diseñarán display:blockde forma </br>
+           predeterminada. Si desea utilizar estos elementos en navegadores más antiguos, deberá definir el estilo de visualización manualmente:</br>
 
-    <p>
-     El segundo problema es el DOM que crean los navegadores cuando encuentran elementos desconocidos. Si IE 8 no </br>
-     reconoce explícitamente el nombre del elemento, insertará el elemento en el DOM como un nodo vacío sin elementos </br>
-     secundarios . Todos los elementos que esperaría que fueran hijos directos del elemento desconocido se insertar como hermanos en su luga</br>
+	    article,aside,details,figcaption,figure,
+	    footer,header,hgroup,menu,nav,section {
+	    display:block}
+        </p>
 
-    Hay una solución maravillosa para este problema. Si crea un elemento ficticio  con JavaScript antes de usarlo en su</br>
-    página, Internet Explorer reconocerá mágicamente el elemento y le permitirá diseñarlo con CSS. No hay </br>
-    necesidad de insertar nunca el elemento ficticio en el DOM . Simplemente crear el elemento una vez (por página) es</br> 
-    suficiente para enseñar a IE a diseñar el elemento que no reconoce.
-    </p>
+        <p>
+           El segundo problema es el DOM que crean los navegadores cuando encuentran elementos desconocidos. Si IE 8 no </br>
+           reconoce explícitamente el nombre del elemento, insertará el elemento en el DOM como un nodo vacío sin elementos </br>
+           secundarios . Todos los elementos que esperaría que fueran hijos directos del elemento desconocido se insertar como hermanos en su luga</br>
 
-    <p>
-    	Los bits iniciales son comentarios condicionales . Internet Explorer los interpreta como una declaración: “si el</br>
-      navegador actual es una versión de Internet Explorer anterior a la versión 9, ejecute este bloque”. Todos los </br>
-      demás navegadores tratarán el bloque completo como un HTML<![endif]-->if comentario. El resultado neto es que </br>
-      Internet Explorer (hasta la versión 8 inclusive) ejecutará este script, pero otros navegadores lo ignorarán por </br>
-      completo. Esto hace que tu página se cargue más rápido en los navegadores que no necesitan este truco.</br>
+           Hay una solución maravillosa para este problema. Si crea un elemento ficticio  con JavaScript antes de usarlo en su</br>
+           página, Internet Explorer reconocerá mágicamente el elemento y le permitirá diseñarlo con CSS. No hay </br>
+           necesidad de insertar nunca el elemento ficticio en el DOM . Simplemente crear el elemento una vez (por página) es</br> 
+           suficiente para enseñar a IE a diseñar el elemento que no reconoce.
+        </p>
 
-       El código JavaScript en sí es relativamente sencillo. La variable e termina como una matriz de cadenas como "abbr",</br> 
-       "article", "aside", etc. Luego recorremos esta matriz y creamos cada uno de los elementos nombrados llamando a </br>
-       document.createElement(). Pero como ignoramos el valor devuelto, los elementos nunca se insertan en el DOM . Pero </br>
-       esto es suficiente para que Internet Explorer trate estos elementos de la forma en que queremos que sean tratados, una vez que los usemos más adelante en la página.</br>
+        <p>
+    	   Los bits iniciales son comentarios condicionales . Internet Explorer los interpreta como una declaración: “si el</br>
+           navegador actual es una versión de Internet Explorer anterior a la versión 9, ejecute este bloque”. Todos los </br>
+           demás navegadores tratarán el bloque completo como un HTML<![endif]-->if comentario. El resultado neto es que </br>
+           Internet Explorer (hasta la versión 8 inclusive) ejecutará este script, pero otros navegadores lo ignorarán por </br>
+           completo. Esto hace que tu página se cargue más rápido en los navegadores que no necesitan este truco.</br>
 
-      Remy Sharp ha "minimizado" este script y lo ha alojado en <a href="https://github.com/afarkas/html5shiv">Google Proyect Hosting</a>. 
-    </p>
+           El código JavaScript en sí es relativamente sencillo. La variable e termina como una matriz de cadenas como "abbr",</br> 
+           "article", "aside", etc. Luego recorremos esta matriz y creamos cada uno de los elementos nombrados llamando a </br>
+            document.createElement(). Pero como ignoramos el valor devuelto, los elementos nunca se insertan en el DOM . Pero </br>
+            esto es suficiente para que Internet Explorer trate estos elementos de la forma en que queremos que sean tratados, una vez que los usemos más adelante en la página.</br>
+
+            Remy Sharp ha "minimizado" este script y lo ha alojado en <a href="https://github.com/afarkas/html5shiv">Google Proyect Hosting</a>. 
+        </p>
 
 
 
