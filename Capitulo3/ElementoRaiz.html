@@ -1,30 +1,43 @@
 <!DOCTYPE html><!--Este es el tipo de documento HTML5 , que es más breve y sencillo y 
 	también activa el "modo estándar" en todos los navegadores modernos.-->
-	<html>
-	<!--  <!DOCTYPE html
+<html>
+	      <!--  <!DOCTYPE html
 	      PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
-<html>
+
 <head>
 	<meta charset="utf-8">
+	
 	<title>Que significa todo esto</title>
 </head>
+	
 <body>
 	<h1>EL ELEMENTO RAIZ</h1>
-	<p>Una página HTML es una serie de elementos anidados. Toda la estructura de la página es como un árbol. Algunos elementos son</br>“hermanos”, como dos ramas que se extienden desde el mismo tronco de árbol. Algunos elementos pueden ser "hijos" de otros elementos, </br>como una rama más pequeña que se extiende desde una rama más grande. (También funciona a la inversa; un elemento que contiene otros</br> elementos se denomina nodo "principal" de sus elementos secundarios inmediatos y "ancestro" de sus nietos). Los elementos que no</br> tienen elementos secundarios se denominan nodos "hoja". El elemento más externo, que es el antepasado de todos los demás elementos de la página, se denomina "elemento raíz". El elemento raíz de una página HTML siempre es "html"
+	
+	<p>
+		Una página HTML es una serie de elementos anidados. Toda la estructura de la página es como un árbol. Algunos elementos son</br>“hermanos”, como dos ramas que se extienden desde el mismo tronco de árbol. Algunos elementos pueden ser "hijos" de otros elementos, </br>como una rama más pequeña que se extiende desde una rama más grande. (También funciona a la inversa; un elemento que contiene otros</br> elementos se denomina nodo "principal" de sus elementos secundarios inmediatos y "ancestro" de sus nietos). Los elementos que no</br> tienen elementos secundarios se denominan nodos "hoja". El elemento más externo, que es el antepasado de todos los demás elementos de la página, se denomina "elemento raíz". El elemento raíz de una página HTML siempre es "html"
 	</p>
 
-	<p>Pero los elementos en HTML5 siempre están en este espacio de nombres , por lo que ya no necesita declararlo explícitamente. Su</br> página HTML5 funcionará exactamente igual en todos los navegadores, ya sea que este atributo esté presente o no.
+	<p>
+		Pero los elementos en HTML5 siempre están en este espacio de nombres , por lo que ya no necesita declararlo explícitamente. Su</br> 
+                página HTML5 funcionará exactamente igual en todos los navegadores, ya sea que este atributo esté presente o no.
 
-    Dejar caer el xmlnsatributo nos deja con este elemento raíz:</p>
-    <h1>html lang="en" xml:lang="en"</h1>
+                Dejar caer el xmlnsatributo nos deja con este elemento raíz:
+        </p>
 
-	<p>Los dos atributos aquí, langy xml:lang, definen el idioma de esta página HTML . ( ensignifica "inglés". ¿Por qué dos atributos para </br> la misma cosa? De nuevo, esto es un vestigio de XHTML . Solo el langatributo tiene algún efecto en HTML5 . Puede mantener el </br> xml:langatributo si lo desea, pero si lo hace, debe asegurarse de que contenga el mismo valor que el langatributo .</br> 
+        <h1>html lang="en" xml:lang="en"</h1>
 
-    Para facilitar la migración hacia y desde XHTML, los autores pueden especificar un atributo sin espacio de nombres sin prefijo y con el </br> nombre local literal "xml:lang" en elementos HTML en documentos HTML
+	<p>
+		Los dos atributos aquí, langy xml:lang, definen el idioma de esta página HTML . ( ensignifica "inglés". ¿Por qué dos atributos para </br>
+                la misma cosa? De nuevo, esto es un vestigio de XHTML . Solo el langatributo tiene algún efecto en HTML5 . Puede mantener el </br>
+                xml:langatributo si lo desea, pero si lo hace, debe asegurarse de que contenga el mismo valor que el langatributo .</br> 
+
+                Para facilitar la migración hacia y desde XHTML, los autores pueden especificar un atributo sin espacio de nombres sin prefijo y con el </br>
+                nombre local literal "xml:lang" en elementos HTML en documentos HTML
 	</p>
-	<p>Eso nos deja con este elemento raíz:</br>
-     html lang="en"</br> "en" significa ingles, se debe buscar el adecuado, para español es "es-419", por lo que quedaria  html lang="es-419"
+	<p>
+		Eso nos deja con este elemento raíz:</br>
+                html lang="en"</br> "en" significa ingles, se debe buscar el adecuado, para español es "es-419", por lo que quedaria  html lang="es-419"
 	</p>
 
 </body>
