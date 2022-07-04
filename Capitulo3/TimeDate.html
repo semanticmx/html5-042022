@@ -11,48 +11,60 @@
 	<h1>Fecha y Hora</h1>
 
 	<p>
-	  HTML5 proporciona una solución específica para este caso de la hora el time elemento.</br>
-		"time datetime="2009-10-22" pubdate> October 22, 2009 time>"</br>
-		Hay tres partes en un time elemento:</br>
+	    HTML5 proporciona una solución específica para este caso de la hora el time elemento.</br>
+	    "time datetime="2009-10-22" pubdate> October 22, 2009 time>"</br>
+	     Hay tres partes en un time elemento:</br>
 	</p>
 
 	<h1>Una marca de tiempo legible por máquina</h1>
-	<h1>Contenido de texto legible por humanos</h1>
+
+	<h1>Contenido de texto legible por humanos</h1
+		
 	<h1>pubdateUna bandera opcional</h1>
 
-	<p>Si también desea incluir una hora, agregue la letra T después de la fecha, luego la hora en formato de 24 horas y luego una diferencia de zona horaria.</p>
+
+	<p>
+		Si también desea incluir una hora, agregue la letra T después de la fecha, luego la hora en formato de 24 horas y luego una diferencia de
+		zona horaria.
+       </p>
+
 
 	<time datetime="2009-10-22T13:59:47-04:00" pubdate>
-    June 30, 2022 3:59pm EDT
-  </time>
+           June 30, 2022 3:59pm EDT
+        </time>
 
-    <p>
-    	Esposible cambiar el contenido del texto, lo que está entre time> y time>, para que coincida con la marca de tiempo</br>
-      legible por máquina. Esto no es realmente necesario. El contenido del texto puede ser cualquier cosa que desee, siempre</br> 
-      que proporcione una marca de fecha/hora legible por máquina en el datetimeatributo. Entonces esto es HTML5 válido :
-    </p>
+
+       <p>
+    	  Esposible cambiar el contenido del texto, lo que está entre time> y time>, para que coincida con la marca de tiempo</br>
+          legible por máquina. Esto no es realmente necesario. El contenido del texto puede ser cualquier cosa que desee, siempre</br> 
+          que proporcione una marca de fecha/hora legible por máquina en el datetimeatributo. Entonces esto es HTML5 válido :
+       </p>
     
-    <time datetime="2009-10-22">last Thursday</time>
 
-    <p>
-    	Y esto también es HTML5 válido :
-    </p>
-
-    <time datetime="2009-10-22"></time>
-
-    <p>
-    	La pieza final es el pubdateatributo. Es un atributo booleano, así que solo agréguelo si lo necesita, así:
-    </p>
-
-    <time datetime="2009-10-22" pubdate="pubdate">June 30, 2022</time>
-
-    <p>
-    	¿Qué significa el pubdateatributo? Significa una de dos cosas. Si el time elemento está en un article elemento,</br> 
-      significa que esta marca de tiempo es la fecha de publicación del artículo. Si el time elemento no está en un</br> 
-      article elemento, significa que esta marca de tiempo es la fecha de publicación de todo el documento.
-    </p>
+       <time datetime="2009-10-22">last Thursday</time>
 
 
+       <p>
+    	  Y esto también es HTML5 válido :
+       </p>
+
+
+       <time datetime="2009-10-22"></time>
+
+
+       <p>
+    	   La pieza final es el pubdateatributo. Es un atributo booleano, así que solo agréguelo si lo necesita, así:
+       </p>
+
+
+       <time datetime="2009-10-22" pubdate="pubdate">June 30, 2022</time>
+
+
+       <p>
+    	  ¿Qué significa el pubdateatributo? Significa una de dos cosas. Si el time elemento está en un article elemento,</br> 
+          significa que esta marca de tiempo es la fecha de publicación del artículo. Si el time elemento no está en un</br> 
+          article elemento, significa que esta marca de tiempo es la fecha de publicación de todo el documento.
+       </p>
 
 </body>
 </html>
