@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Superficie de Dibujo</title>
+
+	<script type="text/javascript">
+		for (var x = 0.5; x < 500; x += 10) {
+           context.moveTo(x, 0);
+           context.lineTo(x, 375);
+        }
+        for (var y = 0.5; y < 375; y += 10) {
+            context.moveTo(0, y);
+            context.lineTo(500, y);
+        }   
+
+        context.strokeStyle = "#eee";
+        context.stroke();
+
+	</script>
+</head>
+<body>
+	<h1>Caminos</h1>
+
+	<p align="center">
+		    Cada lienzo tiene un camino . Definir el camino es como dibujar con un lápiz. Puedes dibujar lo que quieras, pero </br>
+        no será parte del producto terminado hasta que tomes la pluma y traces tu camino con tinta.</br>
+
+        Para dibujar líneas rectas a lápiz, utiliza los siguientes dos métodos:</br></br>
+
+        moveTo(x, y)mueve el lápiz al punto de inicio especificado.</br></br>
+        lineTo(x, y)dibuja una línea hasta el punto final especificado.</br></br>
+        Cuanto más llamas moveTo()y lineTo(), más grande se vuelve el camino. Estos son métodos de "lápiz": puede llamarlos </br>
+        tantas veces como quiera, pero no verá nada en el lienzo hasta que llame a uno de los métodos de "tinta".</br>
+        Necesitamos un método de "tinta" para que sea permanente.
+	</p>
+
+</body>
+</html>
