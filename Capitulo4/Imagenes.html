@@ -4,30 +4,67 @@
 	<meta charset="utf-8">
 
 	<title>Superficie de Dibujo</title>
+
+	<script>
+            window.onload = function() {
+            var canvas = document.getElementById("e");
+             var context = canvas.getContext("2d");
+            var cat = document.getElementById("cat");
+            context.drawImage(cat, 0, 0);
+            };
+       </script>
+
+     <script>
+        var canvas = document.getElementById("d");
+        var context = canvas.getContext("2d");
+        var cat = new Image();
+        cat.src = "cat.jpg";
+        cat.onload = function() {
+        context.drawImage(cat, 0, 0);
+        };
+    </script>
 </head>
 <body>
 	<h1>Imagenes</h1>
 
-	<p>
-		El contexto de dibujo de lienzo define un drawImage()método para dibujar una imagen en un lienzo. El método puede tomar tres, cinco o nueve argumentos.</br>
+	<p align="center">
+           El contexto de dibujo de lienzo define un drawImage()método para dibujar una imagen en un lienzo. El método puede tomar tres, cinco o nueve argumentos.</br>
 
-        **drawImage(image, dx, dy)toma una imagen y la dibuja en el lienzo. Las coordenadas dadas (dx, dy)serán la esquina</br>
-        superior izquierda de la imagen. Las coordenadas (0, 0)dibujarían la imagen en la esquina superior izquierda del lienzo.</br></br>
-        **drawImage(image, dx, dy, dw, dh)toma una imagen, la escala a un ancho dwy una altura de dh, y la dibuja en el lienzo en las coordenadas (dx, dy).</br></br>
-        **drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh)toma una imagen, la recorta en el rectángulo (sx, sy, sw, sh), la escala a las dimensiones (dw, dh)y la dibuja
-        en el lienzo en las coordenadas (dx, dy).</br></br>
+            **drawImage(image, dx, dy)toma una imagen y la dibuja en el lienzo. Las coordenadas dadas (dx, dy)serán la esquina</br> superior izquierda de la imagen.
+            Las coordenadas (0, 0)dibujarían la imagen en la esquina superior izquierda del lienzo.</br></br>
+            **drawImage(image, dx, dy, dw, dh)toma una imagen, la escala a un ancho dwy una altura de dh, y la dibuja en el lienzo en las coordenadas (dx, dy).</br></br>
+            **drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh)toma una imagen, la recorta en el rectángulo (sx, sy, sw, sh), la escala a las dimensiones (dw, dh)y la dibuja
+            en el lienzo en las coordenadas (dx, dy).</br></br>
 
-        La especificación HTML5 explica los drawImage()parámetros :</br>
+           La especificación HTML5 explica los drawImage()parámetros :</br>
  
-        **El rectángulo de origen es el rectángulo [dentro de la imagen de origen] cuyas esquinas son los cuatro puntos (sx, sy), (sx+sw, sy), (sx+sw, sy+sh), 
-        (sx, sy+sh).</br></br>
+           **El rectángulo de origen es el rectángulo [dentro de la imagen de origen] cuyas esquinas son los cuatro puntos (sx, sy), (sx+sw, sy), (sx+sw, sy+sh),
+           (sx, sy+sh).</br></br>
 
-        **El rectángulo de destino es el rectángulo [dentro del lienzo] cuyas esquinas son los cuatro puntos (dx, dy),(dx+dw, dy) , (dx+dw, dy+dh), (dx, dy+dh).</br></br>
+           **El rectángulo de destino es el rectángulo [dentro del lienzo] cuyas esquinas son los cuatro puntos (dx, dy),(dx+dw, dy) , (dx+dw, dy+dh), (dx, dy+dh).</br></br>
 
-        Para dibujar una imagen en un lienzo, necesita una imagen. La imagen puede ser un img elemento existente o puede</br> crear un Image()objeto con JavaScript. 
-        De cualquier manera, debe asegurarse de que la imagen esté completamente cargada antes de poder dibujarla en el lienzo.</br>
+           Para dibujar una imagen en un lienzo, necesita una imagen. La imagen puede ser un img elemento existente o puede</br> crear un Image()objeto con JavaScript. 
+           De cualquier manera, debe asegurarse de que la imagen esté completamente cargada antes de poder dibujarla en el lienzo.</br>
 	</p>
 
-  <img id="cat" src="cat.jpg" alt="sleeping cat" width="177" height="113">
+	<p align="center">
+		Para dibujar una imagen en un lienzo, necesita una imagen. La imagen puede ser un img elemento existente, como en el ejemplo inferior.</br>
+		Si está utilizando un img elemento existente, puede dibujarlo de forma segura en el lienzo durante el window.onloadevento.
+
+		<img id="cat" src="cat.jpg" alt="sleeping cat" width="177" height="113">
+
+                <canvas id="e" width="177" height="113"></canvas>
+	</p>
+
+    
+
+    <p align="center">
+    	       Tambien puede crear un Image()objeto con JavaScript, como en el ejmeplo inferior.
+
+    	      <canvas id="d" width="177" height="113"></canvas>
+    </p>
+
+    
+
 </body>
 </html>
