@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Superficie de Dibujo</title>
+
+	<script type="text/javascript">
+		function draw_b() {
+           var b_canvas = document.getElementById("b");
+           var b_context = b_canvas.getContext("2d");
+           b_context.fillRect(50, 25, 150, 100);
+           }
+	</script>
+</head>
+<body>
+	<h1>Formas Simples</h1>
+
+	<p align="center">
+		   Cada lienzo comienza en blanco. ¡Eso es aburrido! Dibujemos algo.</br>
+        Cada lienzo tiene un contexto de dibujo , que es donde suceden todas las cosas divertidas. Una vez que haya </br>
+        encontrado un canvas elemento en el DOM (usando document.getElementById()o cualquier otro método que desee), llame</br> 
+        a su getContext()método. Debe pasar la cadena "2d"al getContext()método.</br></br>
+        Entonces, tienes un canvas elemento y tienes su contexto de dibujo. El contexto de dibujo es donde se definen todos </br>
+        los métodos y propiedades de dibujo. Hay todo un grupo de propiedades y métodos dedicados a dibujar rectángulos:</br></br>
+
+        **La fillStylepropiedad puede ser un color CSS , un patrón o un degradado. El valor predeterminado fillStylees negro sólido, </br>
+        pero puede configurarlo como desee. Cada contexto de dibujo recuerda sus propias propiedades siempre que la página esté abierta,</br> 
+        a menos que haga algo para restablecerla.</br>
+        **fillRect(x, y, width, height)dibuja un rectángulo relleno con el estilo de relleno actual.</br>
+        **La strokeStylepropiedad es como fillStyle: puede ser un color CSS, un patrón o un degradado.</br>
+        **strokeRect(x, y, width, height)dibuja un rectángulo con el estilo de trazo actual. strokeRectno llena el medio; solo dibuja los bordes.</br>
+        **clearRect(x, y, width, height)borra los píxeles en el rectángulo especificado.</br>
+		
+	</p>
+	<canvas id="b" width="300" height="225">Ejemplo</canvas>
+
+</body>
+</html>
