@@ -13,8 +13,18 @@
               context.drawImage(cat, 0, 0);
               };
       </script>
-
 	
+       <script type="text/javascript">
+    	  cat.onload = function() {
+          for (var x = 0, y = 0;
+          x < 500 && y < 375;
+             x += 50, y += 37) {
+             context.drawImage(cat, x, y, 88, 56);
+             }
+           };
+
+        </script>
+
      <script>
         var canvas = document.getElementById("d");
         var context = canvas.getContext("2d");
