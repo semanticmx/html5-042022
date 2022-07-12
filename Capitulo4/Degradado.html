@@ -10,38 +10,38 @@
 
 	<script type="text/javascript">
 		function draw() {
-			      var c_canvas = document.getElementById("c");
-            var context = c_canvas.getContext("2d");
-            var my_gradient = context.createLinearGradient(0, 0, 300, 0);
-            my_gradient.addColorStop(0, "black");
-            my_gradient.addColorStop(1, "white");
-            context.fillStyle = my_gradient;
-            context.fillRect(0, 0, 300, 225);     	
+	             var c_canvas = document.getElementById("c");
+                     var context = c_canvas.getContext("2d");
+                     var my_gradient = context.createLinearGradient(0, 0, 300, 0);
+                     my_gradient.addColorStop(0, "black");
+                     my_gradient.addColorStop(1, "white");
+                     context.fillStyle = my_gradient;
+                     context.fillRect(0, 0, 300, 225);     	
 		}
 
 		function draw1() {
-			      var c_canvas = document.getElementById("d");
-            var context = c_canvas.getContext("2d");
-            var my_gradient = context.createLinearGradient(0, 0, 0, 225);
-            my_gradient.addColorStop(0, "red");
-            my_gradient.addColorStop(1, "white");
-            context.fillStyle = my_gradient;
-            context.fillRect(0, 0, 300, 225);     	
+	              var c_canvas = document.getElementById("d");
+                      var context = c_canvas.getContext("2d");
+                      var my_gradient = context.createLinearGradient(0, 0, 0, 225);
+                      my_gradient.addColorStop(0, "red");
+                      my_gradient.addColorStop(1, "white");
+                      context.fillStyle = my_gradient;
+                      context.fillRect(0, 0, 300, 225);     	
 		}
 
 		function draw2() {
-			      var c_canvas = document.getElementById("e");
-            var context = c_canvas.getContext("2d");
-            var my_gradient = context.createLinearGradient(0, 0, 300, 225);
-            my_gradient.addColorStop(0, "blue");
-            my_gradient.addColorStop(1, "white");
-            context.fillStyle = my_gradient;
-            context.fillRect(0, 0, 300, 225);     	
+		      var c_canvas = document.getElementById("e");
+                      var context = c_canvas.getContext("2d");
+                      var my_gradient = context.createLinearGradient(0, 0, 300, 225);
+                      my_gradient.addColorStop(0, "blue");
+                      my_gradient.addColorStop(1, "white");
+                      context.fillStyle = my_gradient;
+                      context.fillRect(0, 0, 300, 225);     	
 		}
 	</script>
 </head>
 <body>
-	<h1>+Degradado</h1>
+	<h1>Degradado</h1>
 
 	<p align="center">
 		    Una vez que tenemos el contexto del dibujo, podemos comenzar a definir un degradado. Un degradado es una</br>
@@ -81,7 +81,7 @@
      <canvas id="e" width="500" height="375"></canvas>
 
 	   <form>
-            <input type="button" onclick="dra2()" value="Activar Canvas">
+            <input type="button" onclick="draw2()" value="Activar Canvas">
      </form>
 
 </body>
