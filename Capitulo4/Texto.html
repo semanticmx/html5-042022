@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Superficie de Dibujo</title>
+
+	<script type="text/javascript">
+		function draw() {
+			var c_canvas = document.getElementById("c");
+                        var context = c_canvas.getContext("2d");
+		        for (var x = 0.5; x < 500; x += 10) {
+                              context.moveTo(x, 0);
+                              context.lineTo(x, 375);
+                        }
+                       for (var y = 0.5; y < 375; y += 10) {
+                              context.moveTo(0, y);
+                              context.lineTo(500, y);
+                        }   
+		                context.strokeStyle = "#eee";
+		             
+                     context.stroke();	
+                     context.beginPath();
+                     context.moveTo(0, 40);
+                     context.lineTo(240, 40);
+                     context.moveTo(260, 40);
+                     context.lineTo(500, 40);
+                     context.moveTo(495, 35);
+                     context.lineTo(500, 40);
+                     context.lineTo(495, 45);
+                     
+		                 context.moveTo(60, 0);
+                     context.lineTo(60, 153);
+                     context.moveTo(60, 173);
+                     context.lineTo(60, 375);
+                     context.moveTo(65, 370);
+                     context.lineTo(60, 375);
+                     context.lineTo(55, 370);	
+		                 context.strokeStyle = "#000";
+                     context.stroke();
+                     
+                     context.font = "bold 12px sans-serif";
+                     context.fillText("x", 248, 43);
+                     context.fillText("y", 58, 165);
+                     
+                     context.textBaseline = "top";
+                     context.fillText("( 0 , 0 )", 8, 5);
+                     
+                     context.textAlign = "right";
+                     context.textBaseline = "bottom";
+                     context.fillText("( 500 , 375 )", 492, 370);	
+		     	
+		}
+	</script>
+</head>
+<body>
+	<h1>Texto</h1>
+
+	<p align="center">
+		        Además de dibujar líneas en un lienzo , también puede dibujar texto en un lienzo. A diferencia del texto en la página web que lo rodea,</br>
+            no hay un modelo de caja. Eso significa que ninguna de las técnicas familiares de diseño de CSS está disponible: sin flotantes, sin márgenes,</br>
+            sin relleno, sin ajuste de palabras. </br></br>
+
+            Los siguientes atributos de fuente están disponibles en el contexto del dibujo :</br></br>
+
+            **font Puede ser cualquier cosa que pondrías en una regla CSS . fontEso incluye estilo de fuente, variante de</br>
+              fuente, peso de fuente, tamaño de fuente, altura de línea y familia de fuentes.</br></br>
+            **textAlign Controla la alineación del texto. Es similar (pero no idéntico) a una regla CSS . text-alignLos </br>
+              valores posibles son start, end, left, righty center.</br></br>
+            **textBaseline Controla dónde se dibuja el texto en relación con el punto de inicio. Los valores posibles son top, hanging, middle, alphabetic, ideographico bottom.
+	</p>
+
+	<canvas id="c" width="500" height="375"></canvas>
+
+	<form>
+            <input type="button" onclick="draw()" value="Activar Canvas">
+        </form>
+
+</body>
+</html>
