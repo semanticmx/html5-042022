@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Superficie de Dibujo</title>
+
+	<!--[if lt IE 9]>
+  <script src="excanvas.js"></script>
+  <![endif]-->
+  
+</head>
+<body>
+	<h1>¿QUÉ PASA CON IE?</h1>
+
+	<p align="center">
+		
+          Las versiones de Internet Explorer anteriores a la 9.0 no admiten la API de lienzo. Sin embargo, esas versiones</br>
+          anteriores de Internet Explorer sí son compatibles con una tecnología patentada de Microsoft llamada VML , que</br>
+          puede hacer muchas de las mismas cosas que el canvaselemento. Y así excanvas.jsnació.</br></br>
+
+          Explorercanvas ( excanvas.js) es una biblioteca JavaScript de código abierto con licencia de Apache que </br>
+          implementa la API de lienzo en Internet Explorer. Para usarlo, incluya el siguiente script elemento en la parte superior de su página.</br></br>
+
+          Los bits [if lt IE 9]  son comentarios condicionales . Internet Explorer los interpreta como una declaración: "si</br>
+          el navegador actual es una versión de Internet Explorer anterior a (pero sin incluir) la versión 9, ejecute</br>
+          este bloque". Todos los demás navegadores tratarán el bloque completo como un comentario HTML . </br>
+          El resultado neto es que Internet Explorer 7 y 8 descargarán el script y lo ejecutarán, pero otros navegadores </br>
+          ignorarán el script por completo (no lo descargarán, no lo ejecutarán, nada).</br></br>
+
+          Hay algunas limitaciones:</br></br>
+
+          **Los degradados solo pueden ser lineales. No se admiten degradados radiales .</br></br>
+          **Los patrones deben repetirse en ambas direcciones.</br></br>
+          **Las regiones de recorte no son compatibles.</br></br>
+          **La escala no uniforme no escala correctamente los trazos.</br></br>
+          **Es lento. Esto no debería sorprender a nadie, ya que, para empezar, el analizador de JavaScript de Internet </br>
+          Explorer es más lento que otros navegadores. Una vez que comience a dibujar formas complejas a través de una</br>
+          biblioteca de JavaScript que traduce los comandos a una tecnología completamente diferente, las cosas se</br>
+          atascarán. No notará la degradación del rendimiento en ejemplos simples como dibujar algunas líneas y transformar</br>
+          una imagen, pero lo verá de inmediato una vez que comience a hacer animación basada en lienzo y otras cosas locas.</br></br>
+          
+
+          Hay una advertencia más sobre el uso de excanvas.js, y es un problema con el que me encontré al crear los</br>
+          ejemplos de este capítulo. ExplorerCanvas inicializa automáticamente su propia interfaz de lienzo falso cada vez</br>
+          que incluye el excanvas.jsscript en su página HTML . Pero eso no significa que Internet Explorer esté listo</br>
+          para usarlo de inmediato. En ciertas situaciones, puede encontrarse con una condición de carrera en la que la</br> 
+          interfaz de lienzo falso es casi , pero no del todo, lista para usar.
+
+
+
+	</p>
+
+</body>
+</html>
