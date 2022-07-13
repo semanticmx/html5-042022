@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Superficie de Dibujo</title>
+
+	<script type="text/javascript">
+		function draw() {
+	             var c_canvas = document.getElementById("c");
+                     var context = c_canvas.getContext("2d");
+                     var my_gradient = context.createLinearGradient(0, 0, 300, 0);
+                     my_gradient.addColorStop(0, "black");
+                     my_gradient.addColorStop(1, "white");
+                     context.fillStyle = my_gradient;
+                     context.fillRect(0, 0, 300, 225);     	
+		}
+
+		function draw1() {
+	              var c_canvas = document.getElementById("d");
+                      var context = c_canvas.getContext("2d");
+                      var my_gradient = context.createLinearGradient(0, 0, 0, 225);
+                      my_gradient.addColorStop(0, "red");
+                      my_gradient.addColorStop(1, "white");
+                      context.fillStyle = my_gradient;
+                      context.fillRect(0, 0, 300, 225);     	
+		}
+
+		function draw2() {
+		      var c_canvas = document.getElementById("e");
+                      var context = c_canvas.getContext("2d");
+                      var my_gradient = context.createLinearGradient(0, 0, 300, 225);
+                      my_gradient.addColorStop(0, "blue");
+                      my_gradient.addColorStop(1, "white");
+                      context.fillStyle = my_gradient;
+                      context.fillRect(0, 0, 300, 225);     	
+		}
+	</script>
+</head>
+<body>
+	<h1>Degradado</h1>
+
+	<p align="center">
+		    Una vez que tenemos el contexto del dibujo, podemos comenzar a definir un degradado. Un degradado es una</br>
+        transición suave entre dos o más colores. El contexto de dibujo de lienzo admite dos tipos de degradados: </br></br>
+  
+	        --createLinearGradient(x0, y0, x1, y1)pinta a lo largo de una línea de (x0, y0) a (x1, y1).</br></br>
+          --createRadialGradient(x0, y0, r0, x1, y1, r1)pinta a lo largo de un cono entre dos círculos. Los tres primeros</br>
+            parámetros representan el círculo inicial, con origen (x0, y0) y radio r0. Los últimos tres parámetros </br>
+            representan el círculo final, con origen (x1, y1) y radio r1.</br></br>
+
+            Una vez que tenemos un objeto degradado, podemos definir los colores del degradado. Un gradiente tiene dos o</br>
+            más paradas de color . Las paradas de color pueden estar en cualquier lugar a lo largo del degradado. </br>
+            Para agregar una parada de color, debe especificar su posición a lo largo del degradado. Las posiciones de </br>
+            gradiente pueden estar en cualquier lugar entre 0 y 1.</br>
+	</p>
+
+	   <canvas id="c" width="500" height="375"></canvas>
+
+	   <form>
+            <input type="button" onclick="draw()" value="Activar Canvas">
+     </form>
+
+     <h1>
+    	  Degradado que sombree de arriba a abajo.
+     </h1>
+
+     <canvas id="d" width="500" height="375"></canvas>
+
+	   <form>
+            <input type="button" onclick="draw1()" value="Activar Canvas">
+     </form>
+    
+     <h1>
+    	 Degradados a lo largo de una diagonal.
+     </h1>
+
+     <canvas id="e" width="500" height="375"></canvas>
+
+	   <form>
+            <input type="button" onclick="draw2()" value="Activar Canvas">
+     </form>
+
+</body>
+</html>

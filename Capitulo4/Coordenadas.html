@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Superficie de Dibujo</title> 
+
+	<script type="text/javascript">
+		function draw() {
+          var canvas = document.getElementById('canvas');
+            if (canvas.getContext){
+              var ctx = canvas.getContext('2d');
+
+               ctx.beginPath();
+               ctx.moveTo(75,50);
+               ctx.lineTo(100,75);
+               ctx.lineTo(100,25);
+               ctx.closePath();
+               ctx.fill();
+            }
+        }
+	</script>
+</head>
+<body>
+	<h1>Coordenadas del Lienzo</h1>
+
+	<p align="center">
+		El lienzo es una cuadrícula bidimensional. La coordenada (0, 0) está en la esquina superior izquierda del lienzo. A</br>
+    lo largo del eje X, los valores aumentan hacia el borde derecho del lienzo. A lo largo del eje Y, los valores aumentan hacia el borde inferior del lienzo.</br>
+
+		Primero, necesitamos definir el canvas elemento en sí. El canvas elemento define el widthand height, y el id para que podamos encontrarlo más tarde.</br></br>
+
+     canvas id="c" width="500" height="375" canvas</br></br>
+
+     Luego necesitamos un script para encontrar el canvas elemento en el DOM y obtener su contexto de dibujo.</br>
+
+     var c_canvas = document.getElementById("c");</br></br>
+     var context = c_canvas.getContext("2d");</br></br>
+     Ahora podemos empezar a dibujar líneas.
+	</p>
+
+	<canvas id="canvas" width="300" height="225" style="border:1px dotted;float:left"></canvas>
+
+    <form>
+        <input type="button" onclick="draw()" value="Activar Canvas">
+    </form>
+
+</body>
+</html>
