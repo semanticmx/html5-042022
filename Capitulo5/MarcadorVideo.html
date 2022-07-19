@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+	<title>Por fin el Marcado</title>
+</head>
+<body>
+	<h1>El Marcado</h1>
+
+	<p>
+		HTML5 le ofrece dos formas de incluir video en su página web. Ambos implican el video elemento. Si solo tiene un archivo de video, simplemente puede vincularlo
+    en un src atributo.</br></br>
+
+		Siempre debe incluir widthy height atributos en los video etiquetas. Los atributos widthy height pueden tener el</br> mismo ancho y alto máximo que especificó 
+    durante el proceso de codificación. No se preocupe si una dimensión del</br> video es un poco más pequeña que eso. Su navegador centrará el video dentro del 
+    cuadro definido por la video </br>etiqueta. Nunca será suavizado o estirado fuera de proporción.</br></br>
+
+		De forma predeterminada, el video elemento no expondrá ningún tipo de control del reproductor. Puede crear sus </br>propios controles con HTML , CSS y 
+    JavaScript simples y antiguos. El video elemento tiene métodos como </br>play()ypause() y una propiedad de lectura/escritura llamada currentTime. 
+    También hay lectura/escritura volumey </br>muted propiedades. Entonces realmente tiene todo lo que necesita para construir su propia interfaz.</br></br>
+
+     Si no desea crear su propia interfaz, puede indicarle al navegador que muestre un conjunto de controles incorporado. Para hacer esto, simplemente incluya
+     el controls atributo en su video etiqueta.</br></br>
+
+     Hay otros dos atributos opcionales que quiero mencionar antes de continuar: preloady autoplay.  </br>
+     El preloadatributo le dice al navegador que desea que comience a descargar el archivo de video tan pronto como se</br> cargue la página. Esto tiene sentido 
+     si el objetivo de la página es ver el video. Por otro lado, si es solo material complementario que solo verán unos pocos visitantes,</br> entonces puede
+     configurar preload para none indicarle al navegador que minimice el tráfico de red.</br>
+	</p>
+
+	<video src="video.mp4" 
+	       width="320" 
+	       height="240" 
+	       controls
+	       preload="none"> Ejemplo
+		
+	</video>
+  
+</body>
+</html>
