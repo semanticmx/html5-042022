@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Gelocalización</title>
+
+	<script type="text/javascript">
+		
+		    function get_location() {
+			       if (Modernizr.geolocation) {
+				       navigator.geolocation.getCurrentPosition(show_map, handle_error);
+			         }
+              else {
+                  // no native support; maybe try a fallback?
+              }
+          }
+
+          function show_map(position) {
+          	var latitude = position.coords.latitude;
+          	var longitude = position.coords.longitude;
+            // let's show a map or do something interesting!
+           }
+
+           function handle_error(err) {
+                if (err.code == 1) {
+                    // user said no!
+                }
+             }
+
+    </script>
+
+</head>
+<body>
+
+	<h1>Codigo</h1>
+
+	<p align="center">
+		    La API de geolocalización se centra en una nueva propiedad en el navigatorobjeto global: navigator.geolocation.</br>
+        
+        La función de devolución de llamada se llamará con un solo parámetro, un objeto con dos propiedades: coords y timestamp. La marca de</br>
+        tiempo es solo eso, la fecha y la hora en que se calculó la ubicación. El coords objeto tiene propiedades como latitud y longitud que son </br>
+        exactamente como suenan: la ubicación física del usuario en el mundo.</br></br>
+
+        Solo se garantiza que tres de las propiedades estarán allí ( coords.latitude, coords.longitudey coords.accuracy). El resto podría </br>
+        regresar null, según las capacidades de su dispositivo y el servidor de posicionamiento backend con el que se comunica. Las </br>
+        propiedades headingy speed se calculan en función de la posición anterior del usuario, si es posible.</br></br>
+
+        <h1>Manejo de Errores</h1></br></br>
+
+
+        La geolocalización es complicada. Las cosas pueden salir mal. Ya he mencionado el ángulo del "consentimiento del usuario". Si su </br>
+        aplicación web quiere la ubicación del usuario pero el usuario no quiere dársela. El usuario siempre gana. Para eso el segundo </br>
+        argumento de la getCurrentPosition()función: una función de devolución de llamada de manejo de errores.</br></br>
+
+        La codepropiedad será una de</br></br>
+
+            --PERMISSION_DENIED( 1) si el usuario hace clic en el botón "No compartir" o le niega el acceso a su ubicación.</br></br>
+            --POSITION_UNAVAILABLE( 2) si la red está caída o los satélites de posicionamiento no pueden ser contactados.</br></br>
+            --TIMEOUT( 3) si la red está activa pero tarda demasiado en calcular la posición del usuario. ¿Cuánto tiempo es "demasiado largo"? </br>Te mostraré cómo definir eso en la siguiente sección.
+
+	</p>
+
+</body>
+</html>
