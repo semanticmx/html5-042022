@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+
+     <title>Gelocalización</title>
+
+     <script type="text/javascript">
+     	
+     	function geoSuccess(p) {
+            alert("Found you at latitude " + p.coords.latitude +
+            ", longitude " + p.coords.longitude);
+        }
+
+
+        function geoError() {
+             alert("Could not find you!");
+        }
+
+     </script>
+</head>
+<body>
+	<h1 align="center">GEOPOSITION.JS AL RESCATE</h1>
+
+	<p align="center">
+		geoPositon.jses una biblioteca JavaScript de código abierto con licencia del MIT que suaviza las diferencias entre la API de</br>
+    geolocalización W3C , los servicios de geolocalización IP y las API proporcionadas por las plataformas móviles. Para usarlo, deberá </br>
+    agregar un elemento en la parte inferior de su página.</br></br>
+
+		La init()función regresa si hay disponible una APItrue de geolocalización compatible,llamar a la init()función en realidad no </br>
+    encuentra su ubicación. Simplemente verifica que es posible encontrar su ubicación. Para encontrar realmente su ubicación, debe llamar a la getCurrentPosition()función.</br></br>
+
+		La getCurrentPosition()función activará su navegador para solicitar el permiso para encontrar y compartir la ubicación. Si el </br>
+    navegador admite de forma nativa la API de geolocalización , mostrará una barra de información en la parte superior de la página que </br>
+    preguntará si desea compartir su ubicación con este sitio web.</br></br>
+
+    La getCurrentPosition()función toma dos funciones de devolución de llamada como argumentos. Si la getCurrentPosition()función tuvo </br>
+    éxito en encontrar su ubicación, es decir, usted dio su permiso y la API de geolocalización realmente hizo su magia, llamará a la </br>
+    función pasada como primer argumento. En este ejemplo, se llama a la función de devolución de llamada correcta geo_success.</br></br>
+
+    Si la función no pudo encontrar su ubicación, ya sea porque se negó a dar su permiso o porque la APIgetCurrentPosition() de </br>
+    geolocalización falló por algún motivo, llamará a la función pasada como segundo argumento. En este ejemplo, se llama a la función de devolución de llamada fallida . geoError
+	</p>
+
+
+     <script type="text/javascript">
+     	   if (geoPosition.init()) {
+                 geoPosition.getCurrentPosition(geoSuccess, geoError);
+                }
+     </script>
+</body>
+</html>
