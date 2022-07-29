@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+
+     <title>Gelocalización</title>
+</head>
+<body>
+	<h1 align="center">Elecciones</h1>
+
+	<p align="center">
+		Algunos dispositivos móviles populares, como los teléfonos iPhone y Android, admiten dos métodos para averiguar dónde se encuentra. El </br>
+    primer método triangula su posición en función de su proximidad relativa a diferentes torres celulares operadas por su operador </br>
+    de telefonía. Este método es rápido y no requiere ningún hardware de GPS dedicado , pero solo le da una idea aproximada de dónde se</br> 
+    encuentra. Dependiendo de cuántas torres de telefonía celular haya en su área, "una idea aproximada" podría ser tan solo una </br>
+    cuadra de la ciudad o tanto como un kilómetro en todas las direcciones.</br></br>
+
+		El segundo método en realidad usa hardware GPS dedicado en su dispositivo para hablar con satélites de posicionamiento GPS dedicados </br>
+    que están orbitando la Tierra. Por lo general, el GPS puede señalar su ubicación en unos pocos metros. La desventaja es que el chip</br>
+    GPS dedicado en su dispositivo consume mucha energía, por lo que los teléfonos y otros dispositivos móviles de uso general </br>
+    generalmente apagan el chip hasta que se necesita. Eso significa que habrá un retraso en el inicio mientras el chip inicializa su </br>
+    conexión con el GPS .satélites en el cielo. </br></br>
+
+     La getCurrentPosition()función tiene un tercer argumento opcional, un PositionOptionsobjeto . Hay tres propiedades que puede </br>
+     establecer en un PositionOptionsobjeto. Todas las propiedades son opcionales. Puede establecer cualquiera o todos o ninguno de ellos.</br></br>
+
+     La enableHighAccuracy propiedad es exactamente lo que parece. Si es cierto, el dispositivo puede admitirlo y el usuario da su</br>
+     consentimiento para compartir su ubicación exacta, entonces el dispositivo intentará proporcionarla. Tanto los teléfonos iPhone como </br>
+     Android tienen permisos separados para el posicionamiento de baja y alta precisión, por lo que es posible que las llamadas </br>
+     getCurrentPosition()con enableHighAccuracy:true fallen, pero las llamadas con enableHighAccuracy:false tengan éxito.</br></br>
+
+     La timeout propiedad es la cantidad de milisegundos que su aplicación web está dispuesta a esperar por una posición. Este temporizador </br>
+     no comienza la cuenta regresiva hasta que el usuario da permiso para intentar calcular su posición.</br></br>
+
+      La maximumAge propiedad permite que el dispositivo responda inmediatamente con una posición en caché. Por ejemplo, supongamos que</br> 
+      llama getCurrentPosition()por primera vez, el usuario acepta y su función de devolución de llamada exitosa se llama con una posición </br>
+      que se calculó exactamente a las 10:00 a.m. Exactamente un minuto después, a las 10:01 AM, getCurrentPosition()vuelve a llamar con</br> 
+      una maximumAgepropiedad de 75000.</br></br>
+
+
+      Antes de solicitar la ubicación del usuario, debe pensar en la precisión que necesita y configurarla en enableHighAccuracy</br> 
+      consecuencia. Si necesita encontrar su ubicación más de una vez, debe pensar en la antigüedad de la información y seguir siendo útil,</br> 
+      y configurarla en maximumAge consecuencia. Si necesita encontrar su ubicación continuamente , entonces getCurrentPosition()no es </br>
+      para usted. Necesitas actualizar a watchPosition().</br></br>
+
+      La watchPosition()función tiene la misma estructura que getCurrentPosition(). Toma dos funciones de devolución de llamada, una </br>
+      necesaria para el éxito y una opcional para las condiciones de error, y también puede tomar un PositionOptionsobjeto opcional que</br> 
+      tiene las mismas propiedades que acaba de conocer. La diferencia es que su función de devolución de llamada se llamará cada vez que</br> 
+      cambie la ubicación del usuario . No hay necesidad de sondear activamente su posición. El dispositivo determinará el intervalo de </br>
+      sondeo óptimo y llamará a su función de devolución de llamada cada vez que determine que la posición del usuario ha cambiado. Puede</br>
+      usar esto para actualizar un marcador visible en un mapa, proporcionar instrucciones sobre dónde ir a continuación o lo que quiera.</br>
+      Depende completamente de ti.
+
+      La watchPosition()función en sí devuelve un número. Probablemente deberías guardar este número en alguna parte. Si alguna vez desea</br> 
+      dejar de ver el cambio de ubicación del usuario, puede llamar al clearWatch()método y pasarle este número, y el dispositivo dejará </br>
+      de llamar a su función de devolución de llamada. Si alguna vez ha usado las funciones setInterval()y clearInterval()en JavaScript,</br>
+      esto funciona de la misma manera.</br>
+	</p>
+
+</body>
+</html>
