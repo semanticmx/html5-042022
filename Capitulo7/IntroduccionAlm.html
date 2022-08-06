@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Almacenaminto local</title>
+
+	<script type="text/javascript">
+		function supports_html5_storage() {
+			try {
+				return 'localStorage' in window && window['localStorage'] !== null;
+			} catch (e) {
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1 align="center">INTRODUCCIÓN AL ALMACENAMIENTO HTML5</h1>
+
+	<p align="center">
+	     El almacenamiento HTML5 es una forma de que las páginas web almacenen localmente pares clave/valor con nombre, dentro del navegador </br>
+       web del cliente. Al igual que las cookies, estos datos persisten incluso después de navegar fuera del sitio web, cerrar la pestaña </br>
+       del navegador, salir del navegador o lo que sea. A diferencia de las cookies, estos datos nunca se transmiten al servidor web </br>
+       remoto. A diferencia de todos los intentos anteriores de proporcionar almacenamiento local persistente, se implementa de forma </br>
+       nativa en los navegadores web, por lo que está disponible incluso cuando los complementos de navegador de terceros no lo están.</br></br>
+
+        ¿Qué navegadores? </br></br>
+
+        Bueno, la última versión de casi todos los navegadores admite almacenamiento HTML5 ... ¡incluso Internet Explorer!</br>
+
+         SOPORTE DE ALMACENAMIENTO HTML5</br></br>
+            ES DECIR	FIREFOX	  SAFARI	CROMO	ÓPERA	IPHONE	ANDROIDE
+                          8.0+  	3.5+	4.0+	4.0+	10.5+	2.0+	2.0+
+
+          Antes de poder usarlo, debe detectar si el navegador lo admite .
+	</p>
+
+</body>
+</html>
