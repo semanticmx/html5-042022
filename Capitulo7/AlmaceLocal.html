@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Almacenaminto local</title>
+</head>
+<body>
+	<h1 align="center">PASADO, PRESENTE Y FUTURO DEL ALMACENAMIENTO LOCAL PARA APLICACIONES WEB</h1> </br>
+
+	<p align="center">
+         El almacenamiento local persistente es una de las áreas en las que las aplicaciones cliente nativas han tenido una ventaja sobre las </br>
+         aplicaciones web. Para las aplicaciones nativas, el sistema operativo suele proporcionar una capa de abstracción para almacenar y recuperar</br>
+         datos específicos de la aplicación, como las preferencias o el estado del tiempo de ejecución. Estos valores pueden almacenarse en el</br>
+         registro, archivos INI, archivos XML o en algún otro lugar según la convención de la plataforma. Si su aplicación cliente nativa necesita </br>
+        almacenamiento local más allá de los pares clave/valor, puede incorporar su propia base de datos, inventar su propio formato de archivo o cualquier otra solución.</br></br>
+
+
+
+        Históricamente, las aplicaciones web no han tenido ninguno de estos lujos. Las cookies se inventaron temprano en la historia de la web</br>
+        y, de hecho, se pueden usar para el almacenamiento local persistente de pequeñas cantidades de datos. Pero tienen tres desventajas </br>
+        potencialmente importantes:
+
+        ----Las cookies se incluyen con cada solicitud HTTP , lo que ralentiza su aplicación web al transmitir innecesariamente los mismos datos una y otra vez.</br></br>
+        ----Las cookies se incluyen con cada solicitud HTTP , por lo que se envían datos sin cifrar a través de Internet (a menos que toda su aplicación web se sirva a través de SSL )</br></br>
+        ----Las cookies están limitadas a unos 4 KB de datos, lo suficiente como para ralentizar su aplicación (ver arriba), pero no lo suficiente como para ser terriblemente útiles</br></br>
+
+
+	</p>
+
+	<h1 align="center">UNA BREVE HISTORIA DE LOS HACKS DE ALMACENAMIENTO LOCAL ANTES DE HTML5</h1>
+
+	<p align="center">
+		     Al principio, solo existía Internet Explorer. Microsoft inventó muchas cosas y las incluyó en su navegador para acabar con todos los</br>
+         navegadores, Internet Explorer. Una de estas cosas se denominó DHTML Behaviors , y otra de estas conductas se denominó userData .</br></br>
+
+
+
+        userData permite que las páginas web almacenen hasta 64 KB de datos por dominio, en una estructura jerárquica basada en XML. IE no</br>
+         presenta ningún tipo de diálogo de permisos, y no se permite aumentar la cantidad de almacenamiento. disponible.</br>
+
+
+        En 2002, Adobe introdujo una función en Flash 6 que obtuvo el desafortunado y engañoso nombre de "Flash cookies". Dentro del entorno </br></br>
+
+        Flash, la función se conoce correctamente como Objetos compartidos locales . Brevemente, permite que los objetos Flash almacenen hasta</br>
+        100 KB de datos por dominio. Brad Neuberg desarrolló un prototipo temprano de un puente de Flash a JavaScript llamado AMASS </br>
+
+        (AJAX Massive Storage System), pero estaba limitado por algunas de las peculiaridades de diseño de Flash. En 2006, con la llegada de </br>
+        ExternalInterface en Flash 8, acceder a LSO  desde JavaScript se volvió mucho más fácil y rápido. Brad reescribió AMASS y lo integró en el </br>
+        popular Dojo Toolkit bajo el nombre dedojox.storage. Flash le da a cada dominio 100 KB de almacenamiento "gratis". Más allá de eso, solicita </br>
+        al usuario cada aumento de orden de magnitud en el almacenamiento de datos (1 Mb, 10 Mb, etc.).</br></br>
+
+
+
+        En 2007, Google lanzó Gears , un complemento de navegador de código abierto destinado a proporcionar capacidades adicionales en los </br>
+        navegadores. Gears proporcionó una API para una base de datos SQL integrada basada en SQLite . Para 2010, Google había cambiado sus esfuerzos </br>
+        para llevar todas las capacidades de Gears a estándares web como HTML5 y, finalmente, Google Gears se suspendió .</br></br>
+     
+        HTML5 tiene como proposito proporcionar una API estandarizada , implementada de forma nativa y consistente en múltiples navegadores,</br>
+         sin tener que depender de complementos de terceros.</br>
+
+	</p>
+
+</body>
+</html>

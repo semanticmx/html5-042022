@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Almacenaminto local</title>
+
+	<script type="text/javascript">
+		
+		interface Storage {
+			getter any getItem(in DOMString key);
+			setter creator void setItem(in DOMString key, in any data);
+		};
+
+		interface Storage {
+			deleter void removeItem(in DOMString key);
+			void clear();
+		};
+
+		interface Storage {
+			readonly attribute unsigned long length;
+			getter DOMString key(in unsigned long index);
+		};
+	</script>
+
+	<script type="text/javascript">
+		
+	</script>
+
+</head>
+<body>
+	<h1 align="center">USO DE ALMACENAMIENTO HTML5</h1>
+
+	<p align="center">
+		El almacenamiento HTML5 se basa en pares clave/valor con nombre. Almacena datos en función de una clave con nombre, luego puede </br>
+                 recuperar esos datos con la misma clave. La clave nombrada es una cadena. Los datos pueden ser de cualquier tipo compatible con</br>
+                JavaScript, incluidas cadenas, valores booleanos, enteros o flotantes. Sin embargo, los datos en realidad se almacenan como una</br>
+                cadena. Si está almacenando y recuperando algo que no sea cadenas, deberá usar funciones como parseInt()o parseFloat()para convertir</br>
+                los datos recuperados en el tipo de datos de JavaScript esperado.</br></br>
+
+		Al igual que otros objetos de JavaScript, puede tratar el localStorageobjeto como una matriz asociativa. En lugar de usar los métodos</br>
+                getItem()y setItem(), simplemente puede usar corchetes.</br></br>
+
+		También existen métodos para eliminar el valor de una clave con nombre dada y borrar toda el área de almacenamiento (es decir, </br>
+                eliminar todas las claves y valores a la vez).</br></br>
+
+		Finalmente, hay una propiedad para obtener el número total de valores en el área de almacenamiento y para recorrer todas las claves </br>
+                por índice (para obtener el nombre de cada clave).
+	</p>
+
+	<h1 align="center">SEGUIMIENTO DE CAMBIOS EN EL ÁREA DE ALMACENAMIENTO DE HTML5</h1>
+
+	<p align="center">
+		El storage evento se activa en el windowobjeto cada vez que se llama a setItem(), removeItem()o y en realidad cambia algo .</br>
+		El storageevento se admite en todos los lugares donde se admite el localStorageobjeto, lo que incluye Internet Explorer 8.  Por lo</br>
+                tanto, para enlazar el storage evento, deberá verificar qué mecanismo de evento admite el navegador. </br>
+		El storage evento no es cancelable. Desde dentro de la handle_storage función de devolución de llamada, no hay forma de evitar que </br>
+                ocurra el cambio. Es simplemente una forma en que el navegador le dice: “oye, esto acaba de suceder. No hay nada que puedas hacer al</br>
+                respecto ahora; Sólo quiero hacerte saber."
+	</p>
+
+	<h1 align="center">LIMITACIONES EN LOS NAVEGADORES ACTUALES</h1>
+
+	<p align="center">
+	     Las limitaciones del almacenamiento HTML5 ahora estandarizado, son “5 megabytes” QUOTA_EXCEEDED_ERR, “ ” y “no”.</br></br>
+
+            "5 megabytes" es la cantidad de espacio de almacenamiento que obtiene cada origen de forma predeterminada. Esto es sorprendentemente</br>
+            consistente en todos los navegadores, aunque no es más que una sugerencia en la especificación de almacenamiento de HTML5 . Una </br>
+            cosa a tener en cuenta es que está almacenando cadenas, no datos en su formato original. Si está almacenando muchos enteros o </br>
+           flotantes, la diferencia en la representación realmente puede sumarse. Cada dígito en ese flotante se almacena como un carácter, no en</br> 
+           la representación habitual de un número de punto flotante.</br></br>
+
+           “ QUOTA_EXCEEDED_ERR” es la excepción que se lanzará si excede su cuota de almacenamiento de 5 megabytes. "No" es la respuesta a la </br>
+           siguiente pregunta : "¿Puedo pedirle al usuario más espacio de almacenamiento?" En el momento de escribir este artículo (febrero de 2011), </br>
+           ningún navegador admite ningún mecanismo para que los desarrolladores web soliciten más espacio de almacenamiento.
+
+</body>
+</html>
