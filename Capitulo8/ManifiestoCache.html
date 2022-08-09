@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>EL MANIFIESTO DE CACHÉ</title>
+</head>
+<body>
+   <p align="center">
+   	Una aplicación web sin conexión gira en torno a un archivo de manifiesto de caché. ¿Qué es un archivo de manifiesto? Es una lista de todos</br> 
+    los recursos a los que su aplicación web podría necesitar acceder mientras está desconectada de la red. Para iniciar el proceso de </br>
+    descarga y almacenamiento en caché de estos recursos, debe apuntar al archivo de manifiesto, utilizando un manifestatributo en su html </br>
+    elemento,asegúrese de que el nombre de su archivo de manifiesto de caché termine con .manifest.</br></br>
+    
+    La primera línea de cada archivo de manifiesto de caché es esta:</br></br>
+
+    CACHE MANIFEST</br></br>
+
+    Después de eso, todos los archivos de manifiesto se dividen en tres partes: la sección "explícita", la sección "alternativa" y la sección </br>
+    "lista blanca en línea". Cada sección tiene un encabezado, en su propia línea. Si el archivo de manifiesto no tiene encabezados de </br>
+    sección, todos los recursos enumerados están implícitamente en la sección "explícita". </br></br>
+
+    <h1>SECCIONES DE RED</h1></br></br>
+
+    Aquí hay un ejemplo un poco más complicado. Suponga que desea que su aplicación de reloj realice un seguimiento de los visitantes mediant</br> 
+    un script tracking.cgi que se carga dinámicamente desde un img src atributo. El almacenamiento en caché de este recurso anularía el </br>
+    propósito del seguimiento, por lo que este recurso nunca debe almacenarse en caché y nunca estar disponible sin conexión. Así es como lo haces:</br></br>
+
+        CACHE MANIFEST</br>
+        NETWORK:</br>
+        /tracking.cgi</br>
+        CACHE:</br>
+        /clock.css</br>
+        /clock.js</br>
+        /clock-face.jpg</br></br>
+     Este archivo de manifiesto de caché incluye encabezados de sección. La línea marcada NETWORK:es el comienzo de la sección "lista blanca </br>
+     en línea". Los recursos de esta sección nunca se almacenan en caché y no están disponibles sin conexión. La línea marcada CACHE:es el </br>
+     comienzo de la sección "explícita". El resto del archivo de manifiesto de caché es decir cada uno de los tres recursos enumerados se </br>
+     almacenará en caché y estará disponible sin conexión.</br>
+
+     <h1>SECCIONES DE RESPALDO</h1></br></br>
+     
+    
+    Hay un tipo más de sección en un archivo de manifiesto de caché: una sección de reserva. En una sección de respaldo, puede definir </br>
+    sustituciones para recursos en línea que, por cualquier motivo, no se pueden almacenar en caché o no se almacenaron correctamente. La </br
+    especificación HTML5 ofrece este ingenioso ejemplo del uso de una sección alternativa:</br></br>
+
+          CACHE MANIFEST</br>
+          FALLBACK:</br>
+          / /offline.html</br>
+          NETWORK:</br>
+          *</br></br>
+
+     Eso es lo que hace este manifiesto de caché. Supongamos que cada HTMLpágina (entrada, página de discusión, página de edición, página de</br> 
+     historial) en Wikipedia apuntó a este archivo de manifiesto de caché. Cuando visita cualquier página que apunta a un manifiesto de </br>
+     caché, su navegador dice "oye, esta página es parte de una aplicación web fuera de línea, ¿es una que conozco?" Si su navegador nunca</br> 
+     ha descargado este archivo de manifiesto de caché en particular, configurará un nuevo "caché de aplicaciones" sin conexión </br>
+     (abreviatura de "caché de aplicaciones"), descargará todos los recursos enumerados en el manifiesto de caché y luego agregará la página </br>
+     actual a el appcaché. Si su navegador conoce este manifiesto de caché, simplemente agregará la página actual a la caché de </br>
+     aplicaciones existente. De cualquier manera, la página que acaba de visitar termina en el caché de aplicaciones. Esto es importante. </br>
+     Significa que puede tener una aplicación web sin conexión que agrega páginas "perezosamente" a medida que las visita. No necesita </br>
+     enumerar cada uno de susPáginas HTML en su manifiesto de caché.</br></br>
+
+    Ahora mire la sección de reserva. La sección de reserva en este manifiesto de caché solo tiene una línea. La primera parte de la línea </br>
+    (antes del espacio) no es una URL . Es realmente un patrón de URL . El carácter único ( /) coincidirá con cualquier página de su sitio, </br>
+    no solo con la página de inicio. Cuando intenta visitar una página mientras está desconectado, su navegador la buscará en el caché de </br>
+    aplicaciones. Si su navegador encuentra la página en el caché de aplicaciones (porque la visitó mientras estaba en línea y la página se </br>
+    agregó implícitamente al caché de aplicaciones en ese momento), su navegador mostrará la copia en caché de la página. Si su navegador</br> 
+    no encuentra la página en el caché de aplicaciones, en lugar de mostrar un mensaje de error, mostrará la página/offline.html, como </br>
+    se especifica en la segunda mitad de esa línea en la sección de reserva.</br></br>
+
+    Finalmente, examinemos la sección de red. La sección de red en este manifiesto de caché también tiene una sola línea, una línea que</br> 
+    contiene solo un carácter ( *). Este carácter tiene un significado especial en una sección de red. Se llama "bandera comodín de la lista </br>
+    blanca en línea". Esa es una forma elegante de decir que cualquier cosa que no esté en el caché de aplicaciones aún se puede descargar </br>
+    desde la dirección web original, siempre que tenga una conexión a Internet. Esto es importante para una aplicación web fuera de línea "abierta".
+
+
+
+   </p>
+
+</body>
+</html>
