@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>UNA FORMA DE LOCURA</title>
+
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<h1 align="center">NÚMEROS COMO CAJAS DE GIRO</h1>
+
+	<p align="center">
+
+         A menudo no se pide "solo un número". Es más probable que se solicite un número en un rango particular. Es posible que solo se desee</br>
+         ciertos tipos de números dentro de ese rango, tal vez números enteros pero no fracciones o decimales, o algo más esotérico como </br>
+         números divisibles por 10. HTML5 lo tiene cubierto.</br></br>
+
+         Tomemos ese atributo a la vez. (Puede seguir junto con un ejemplo en vivo si lo desea).</br></br>
+
+             --type="number"significa que este es un campo numérico.</br>
+             --min="0"especifica el valor mínimo aceptable para este campo.</br>
+             --max="10"es el valor máximo aceptable.</br>
+             --tep="2", combinado con el minvalor, define los números aceptables en el rango: 0, 2, 4, y así sucesivamente, hasta el maxvalor.</br>
+             --value="6"es el valor predeterminado. </br></br></br>
+
+        Pero HTML5 no se detiene ahí. Por el mismo bajo, bajo precio de gratis, también obtienes estos prácticos métodos de JavaScript:</br></br>
+
+             input.stepUp(n)aumenta el valor del campo en n.</br>
+             input.stepDown(n)disminuye el valor del campo en n.</br>
+             input.valueAsNumberdevuelve el valor actual como un número de punto flotante. (La input.valuepropiedad es siempre una cadena).</br></br>
+
+         Al igual que con todos los otros tipos de entrada que he discutido en este capítulo, los navegadores que no son compatibles </br>
+         type="number"lo tratarán como type="text". El valor predeterminado aparecerá en el campo (ya que está almacenado en el valueatributo),</br>
+         pero los otros atributos como miny maxserán ignorados. Puede implementarlos usted mismo o puede reutilizar un marco de JavaScript que ya haya</br>
+         implementado controles de cuadro de número.
+	</p>
+
+	<h2>EJEMPLO</h2>
+
+   	<form>
+
+         <input type="number"
+                min="0"
+                max="10"
+                step="2"
+                value="6"
+                placeholder="edad">
+    
+    </form>
+
+</body>
+</html>
