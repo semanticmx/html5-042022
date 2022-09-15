@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Capitulo 10</title>
+
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1 align="">EL MODELO DE DATOS DE MICRODATOS</h1>
+	<P align="justify">
+		Definir su propio vocabulario de microdatos es fácil. Primero, necesita un espacio de nombres, que es solo una URL . La URL del </br>
+    espacio de nombres en realidad podría apuntar a una página web en funcionamiento, aunque eso no es estrictamente necesario. Digamos </br> 
+    que quiero crear un vocabulario de microdatos que describa a una persona. Si soy el propietario del data-vocabulary.orgdominio, </br>
+    usaré la URL http://data-vocabulary.org/Person como espacio de nombres para mi vocabulario de microdatos. Esa es una manera fácil </br>
+    de crear un identificador único global: elige una URL en un dominio que controlas. </br></br>
+
+        En este vocabulario, necesito definir algunas propiedades con nombre. Comencemos con tres propiedades básicas:</br></br>
+
+        1.-name(tu nombre completo)</br>
+        2.-photo(un enlace a una foto tuya)</br>
+        3.- url(un enlace a un sitio asociado con usted, como un blog o un perfil de Google)</br>
+
+        “Agregar microdatos” a su página es cuestión de agregar algunos atributos a los elementos HTML que ya tiene. Lo primero que siempre</br>
+        hace es declarar qué vocabulario de microdatos está utilizando, agregando un itemtype atributo. Lo segundo que siempre haces es</br>
+        declarar el alcance del vocabulario, usando un itemscope atributo. En este ejemplo, todos los datos que queremos semantificar están en</br>
+        un section elemento, por lo que declararemos los atributos itemtypey en el elemento. itemscope section
+	</P>
+
+
+
+	<h2>EJEMPLO</h2>
+
+	<section itemscope itemtype="http://data-vocabulary.org/Person">
+
+       <h1 itemprop="name">Mark Pilgrim</h1>
+
+       <p>
+       	  <img itemprop="photo" src="http://www.example.com/photo.jpg" alt="[me smiling]">
+       </p>
+
+       <p>
+       	  <a itemprop="url" href="http://diveintomark.org/">weblog</a>
+       </p>
+
+    </section>
+
+
+
+
+    <h2 align="center">
+    	En resumen: puede agregar propiedades de microdatos a cualquier marcado. Si está utilizando HTML correctamente, le resultará más fácil agregar microdatos</br>
+      que si su marcado HTML apesta, pero siempre se puede hacer.
+    </h2>
+
+</body>
+</html>
