@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Capitulo 10</title>
+
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1 align="center">MARCAR PERSONAS
+	<P align="center">
+
+		Realmente existe un vocabulario de microdatos para marcar información sobre personas, y realmente es así de fácil. Miremos más de cerca.
+
+		<table>
+			<tr>
+				<th scope="row">Propiedad</th>
+				<th>Descripcion</th>
+			</tr>
+
+			<tr>
+				<th>Name</th>
+				<th>Nombre</th>
+			</tr>
+			<tr>
+				<th>Nickname</th>
+				<th>Apodo</th>
+			</tr>
+			<tr>
+				<th>Photo</th>
+				<th>un enlace de imagen</th>
+			</tr>
+			<tr>
+				<th>Title</th>
+				<th>El título de la persona</th>
+			</tr>
+			<tr>
+				<th>Role</th>
+				<th>El rol de la persona</th>
+			</tr>
+			<tr>
+				<th>url</th>
+				<th>Enlace a una página web</th>
+			</tr>
+			<tr>
+				<th>affiliation</th>
+				<th>El nombre de una organización con la que la persona está asociada</th>
+			</tr>
+			<tr>
+				<th>friend</th>
+				<th>Identifica una relación social entre la persona descrita y otra persona.</th>
+			</tr>
+			<tr>
+				<th>contact</th>
+				<th>Identifica una relación social entre la persona descrita y otra persona.</th>
+			</tr>
+			<tr>
+				<th>acquaintance</th>
+				<th>Identifica una relación social entre la persona descrita y otra persona.</th>
+			</tr>
+			<tr>
+				<th>address</th>
+				<th>La ubicación de la persona. Puede tener las subpropiedades street-address, locality, region, postal-codey country-name.</th>
+			</tr>
+
+		</table>
+
+		<br/>
+
+		No todos los fragmentos de HTML tienen que ser una propiedad de microdatos. Los microdatos se refieren a las propiedades en sí, no al</br> 
+    marcado ni a los encabezados que rodean las propiedades.</br></br>
+
+		El vocabulario Person define una address propiedad, que en sí misma es un elemento de microdatos. Eso significa que la dirección</br>
+    tiene su propio vocabulario ( http://data-vocabulary.org/Address) y define sus propias propiedades. El vocabulario de direcciones</br>
+    define 5 propiedades: street-address, locality, region, postal-codey country-name.</br></br>
+
+		De acuerdo con el modelo de datos de microdatos de HTML5 , los a elementos tienen un procesamiento especial. El valor de la propiedad</br> 
+    de los microdatos es el hrefatributo, no el contenido del texto secundario. El texto de cada enlace en realidad es ignorado por</br>
+    un procesador de microdatos. Así, en inglés, esto dice “Esta persona tiene una URL en http://diveintomark.org/. Esta persona</br>
+    tiene otra URL en http://www.google.com/profiles/pilgrim. Esta persona tiene otra URL en http://www.reddit.com/user/MarkPilgrim.</br>
+    Esta persona tiene otra URL en http://www.twitter.com/diveintomark”.
+
+	</P>
+
+
+
+
+	<section itemscope itemtype="http://data-vocabulary.org/Person">
+		<img 
+		itemprop="photo"
+		width="204"
+		height="250"
+		src="http://diveintohtml5.info/examples/2000_05_mark.jpg"
+		alt="[Mark Pilgrim, circa 2000]">
+
+		<h1>Contact Information</h1>
+		<dl>
+			<dt>Name</dt>
+			<dd itemprop="name">Mark Pilgrim</dd>
+
+            <dd>
+            	<span itemprop="title">Developer advocate</span> for
+                <span itemprop="affiliation">Google, Inc.<span>
+            </dd>
+
+			<dt>Mailing address</dt>
+			<dd itemprop="address" 
+			    itemscope
+                itemtype="http://data-vocabulary.org/Address">
+
+                <span itemprop="street-address">100 Main Street</span><br>
+                <span itemprop="locality">Anytown</span>,
+                <span itemprop="region">PA</span>
+                <span itemprop="postal-code">19999</span>
+                <span itemprop="country-name">USA</span>
+			</dd>
+		</dl>
+		<h1>My Digital Footprints</h1>
+		<ul>
+			<li><a href="http://diveintomark.org/">weblog</a></li>
+			<li><a href="http://www.google.com/profiles/pilgrim">Google profile</a></li>
+			<li><a href="http://www.reddit.com/user/MarkPilgrim">Reddit.com profile</a></li>
+			<li><a href="http://www.twitter.com/diveintomark">Twitter</a></li>
+		</ul>
+	</section>
+
+	<p align="center">
+
+		<h1 align="center">PRESENTAMOS LOS FRAGMENTOS ENRIQUECIDOS DE GOOGLE</h1>
+
+		Hay dos clases principales de aplicaciones que consumen HTML y, por extensión, microdatos HTML5 :</br></br>
+
+        navegadores web</br>
+        Los motores de búsqueda</br></br>
+
+
+		Google admite microdatos como parte de su programa Rich Snippets . Cuando el rastreador web de Google analiza su página y encuentra </br>
+    propiedades de microdatos que se ajustan al http://data-vocabulary.org/Personvocabulario, analiza esas propiedades y las almacena</br>
+    junto con el resto de los datos de la página. Google incluso proporciona una herramienta útil para ver cómo Google "ve" sus </br>
+    propiedades de microdatos . </br></br>
+
+		No existen reglas estrictas sobre cómo deben mostrarse las propiedades de los microdatos, cuáles deben mostrarse o si deben mostrarse</br>
+    en absoluto. Si alguien busca "Mark Pilgrim", y Google determina que esta página "acerca de" debe clasificarse en los</br>
+    resultados, y Google decide que vale la pena mostrar las propiedades de microdatos que encontró originalmente en esa página
+
+	</p>
+
+</body>
+</html>
