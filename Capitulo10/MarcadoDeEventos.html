@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Capitulo 10</title>
+
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1 align="center"> MARCADO DE EVENTOS</h1>
+	<P align="center">
+
+       Toda la información sobre el evento está contenida dentro del article elemento, así que ahí es donde necesitamos poner los atributos itemtypey .itemscope</br></br>
+
+       La URL para el vocabulario de eventos es http://data-vocabulary.org/Event, que también contiene un pequeño gráfico que describe las propiedades del vocabulario. 
+       ¿Y cuáles son esas propiedades?</br></br>
+
+       Debido a las reglas de alcance de los microdatos, esto itemprop="name"define una propiedad en el vocabulario Organización, no en el</br>
+       vocabulario Evento. El p elemento definió el comienzo del alcance de las propiedades de la Organización y ese p elemento aún no se ha cerrado con una /p etiqueta.
+	</P>
+ 
+        </br>
+        </br>
+        </br>
+        </br>
+
+	<table>
+		<tr>
+			<th scope="row">Propiedad</th>
+			<th>Descripcion</th>
+		</tr>
+    
+		<tr>
+			<th>summary</th>
+			<th>El nombre del evento</th>
+		</tr>
+    
+		<tr>
+			<th>url</th>
+			<th>Enlace a la página de detalles del evento</th>
+		</tr>
+    
+		<tr>
+			<th>location</th>
+			<th>El lugar o lugar del evento. Opcionalmente, se puede representar mediante una Organización o Dirección anidada .</th>
+		</tr>
+    
+		<tr>
+			<th>description</th>
+			<th>Una descripción del evento</th>
+		</tr>
+    
+		<tr>
+			<th>startDate</th>
+			<th>La fecha y hora de inicio del evento en formato de fecha ISO</th>
+		</tr>
+    
+		<tr>
+			<th>endDate</th>
+			<th>La fecha y hora de finalización del evento en formato de fecha ISO</th>
+		</tr>
+		<tr>
+			<th>duration</th>
+			<th>La fecha de duración del evento en formato de duración ISO</th>
+		</tr>
+    
+		<tr>
+			<th>eventType</th>
+			<th>La categoría del evento (por ejemplo, "Concierto" o "Conferencia"). Esta es una cadena de forma libre, no un atributo enumerado.</th>
+		</tr>
+    
+		<tr>
+			<th>geo</th>
+			<th>Especifica las coordenadas geográficas de la ubicación. Siempre contiene dos subpropiedades, latitudey longitude.</th>
+		</tr>
+    
+		<tr>
+			<th>photo</th>
+			<th>Un enlace a una foto o imagen relacionada con el evento.</th>
+		</tr>
+	</table>
+        </br>
+        </br>
+        </br>
+        </br>
+  
+	<article itemscope itemtype="http://data-vocabulary.org/Event>
+
+		<h1 itemprop="summary>Google Developer Day 2009</h1>
+
+		<img itemprop="photo" 
+		     width="300" 
+		     height="200"
+		     src="http://diveintohtml5.info/examples/gdd-2009-prague-pilgrim.jpg"
+		     alt="[Mark Pilgrim at podium]">
+
+		<p itemprop="description">
+			Google Developer Days are a chance to learn about Google
+			developer products from the engineers who built them. This
+			one-day conference includes seminars and “office hours”
+			on web technologies like Google Maps, OpenSocial, Android,
+			AJAX APIs, Chrome, and Google Web Toolkit.
+		</p>
+
+		<p>
+			<time itemprop="startDate" datetime="2009-11-06T08:30+01:00">2009 November 6, 8:30</time>
+             &ndash;
+            <time itemprop="endDate" datetime="2009-11-06T20:30+01:00">20:30</time>
+		</p>
+
+		<p itemprop="location" 
+		   itemscope
+           itemtype="http://data-vocabulary.org/Organization" >
+
+			 <span itemprop="name">Congress Center</span><br>
+             <span itemprop="address" 
+                   itemscope
+                   itemtype="http://data-vocabulary.org/Address">
+
+                  <span itemprop="street-address">5th května 65</span><br>
+                  <span itemprop="postal-code">140 21</span>
+                  <span itemprop="locality">Praha 4</span><br>
+                  <span itemprop="country-name">Czech Republic</span>
+
+              </span>
+
+              <span itemprop="geo" 
+                    itemscope 
+                    itemtype="http://data-vocabulary.org/Geo">
+
+                  <meta itemprop="latitude" content="50.047893" />
+                  <meta itemprop="longitude" content="14.4491" />
+
+              </span>
+
+		</p>
+
+
+		<p>
+
+			     <a itemprop="url"
+               href="http://code.google.com/intl/cs/events/developerday/2009/home.html">
+                     GDD/Prague home page
+            </a>
+
+		</p>
+	</article>
+
+	<p align="center">
+		 Las propiedades que son elementos de microdatos independientes reciben ID internos ( Item(__1), Item(__2)etc.). Esto no es parte de</br>
+                 la especificación de microdatos. Es solo una convención que utiliza la herramienta de prueba de Google para linealizar la salida</br> 
+                 de muestra y mostrarle la agrupación de elementos anidados y sus propiedades.</br></br>
+
+		 Google comienza a usar el marcado de microdatos que agregamos a la página para mostrar una pequeña tabla de eventos, Otros </br>
+                 consumidores del mismo marcado de microdatos pueden tomar decisiones diferentes sobre qué mostrar o cómo mostrarlo. Aquí no hay</br> 
+                 elección correcta o incorrecta. Depende de usted proporcionar la mayor cantidad de datos posible, con la mayor precisión posible. </br>
+                 Depende del resto del mundo interpretarlo.
+	 </p>
+
+
+</body>
+</html>

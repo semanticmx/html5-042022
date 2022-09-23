@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Capitulo 10</title>
+
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1 align="center"> MARCANDO ORGANIZACIONES</h1>
+	<P align="center">
+
+		Al igual que con el marcado de personas , debe establecer los atributos itemscopey en el elemento más externo. itemtype. En este caso,</br>
+    el elemento más externo es un article elemento. El itemtype atributo declara el vocabulario de microdatos que está utilizando</br>
+    (en este caso, http://data-vocabulary.org/Organization), y el itemscopeatributo declara que todas las propiedades que establece en</br>
+    los elementos secundarios se relacionan con este vocabulario.</br></br>
+
+		De acuerdo con el modelo de datos de microdatos de HTML5 , los h1 elementos no necesitan ningún procesamiento especial. El valor de la</br>
+    propiedad de microdatos es simplemente el contenido de texto del h1 elemento.</br>
+
+		Si desea enumerar más de un número de teléfono, tal vez uno para clientes de los Estados Unidos y otro para clientes internacionales,</br>
+    puede hacerlo. Cualquier propiedad de microdatos se puede repetir. Solo asegúrese de que cada número de teléfono esté en su propio</br> 
+    elemento HTML , separado de cualquier etiqueta que pueda darle.
+
+	</P>
+
+		<table>
+			<tr>
+				<th scope="row">Propiedad</th>
+				<th>Descripcion</th>
+			</tr>
+			<tr>
+				<th>name</th>
+				<th>El nombre de la organización</th>
+			</tr>
+			<tr>
+				<th>url</th>
+				<th>Enlace a la página de inicio de la organización</th>
+			</tr>
+			<tr>
+				<th>address</th>
+				<th>La ubicación de la organización. Puede contener las subpropiedades street-address, locality, region, postal-codey country-name.</th>
+			</tr>
+			<tr>
+				<th>tel</th>
+				<th>El teléfono de la organización.</th>
+			</tr>
+			<tr>
+				<th>geo</th>
+				<th>Especifica las coordenadas geográficas de la ubicación. Siempre contiene dos subpropiedades, latitudey longitude.</th>
+			</tr>
+
+		</table>
+
+	  <article itemscope itemtype="http://data-vocabulary.org/Organization">
+        <h1 itemprop="name">Google, Inc.</h1>
+        <p itemprop="address" 
+           itemscope
+           itemtype="http://data-vocabulary.org/Address">
+             <span itemprop="street-address">1600 Amphitheatre Parkway</span><br>
+             <span itemprop="locality">Mountain View</span>,
+             <span itemprop="region">CA</span>
+             <span itemprop="postal-code">94043</span><br>
+             <span itemprop="country-name">USA</span>
+        </p>
+        <p>
+            US customers: <span itemprop="tel">650-253-0000</span><br>
+            UK customers: <span itemprop="tel">00 + 1* + 6502530000</span>
+        </p>
+        <p>
+        	<a itemprop="url" href="http://www.google.com/">Google.com</a>
+        </p>
+        <span itemprop="geo" itemscope
+           itemtype="http://data-vocabulary.org/Geo">
+           <meta itemprop="latitude" content="37.4149" />
+           <meta itemprop="longitude" content="-122.078" />
+        </span>
+    </article>
+
+    <p align="center">
+
+    	 En este ejemplo, la información de geolocalización no es así. No hay texto visible que dé la latitud y la longitud exactas de la </br>
+       Organización. De hecho, el ejemplo de organization.html (sin microdatos) no tiene ninguna información de geolocalización. Tiene un </br>
+       enlace a Google Maps, pero incluso la URL de ese enlace no contiene coordenadas de latitud y longitud.</br>
+
+         Para manejar casos extremos como este, HTML5 proporciona una forma de anotar datos invisibles . Esta técnica solo debe usarse como </br>
+         último recurso. Si hay una forma de mostrar o representar los datos que le interesan, debe hacerlo. Los datos invisibles que solo</br>
+         las máquinas pueden leer tienden a "obsoletarse" rápidamente. Es decir, alguien vendrá más tarde y actualizará el texto visible</br> 
+         pero se olvidará de actualizar los datos invisibles. Esto sucede más a menudo de lo que piensas, y también te sucederá a ti.
+
+    	 La información de geolocalización se define en su propio vocabulario, como la dirección de una Persona u Organización . Por lo tanto, este  span 
+       elemento necesita tres atributos:</br></br>
+
+           1.- itemprop="geo"dice que este elemento representa la geopropiedad de la Organización circundante</br></br>
+           2.- itemtype="http://data-vocabulary.org/Geo"dice a qué vocabulario de microdatos se ajustan las propiedades de este elemento</br></br>
+           3.- itemscopedice que este elemento es el elemento que encierra un elemento de microdatos con su propio vocabulario (dado en el </br>
+           itemtypeatributo). Todas las propiedades dentro de este elemento son propiedades de http://data-vocabulary.org/Geo, no del
+           entorno http://data-vocabulary.org/Organization.</br></br>
+
+    	 De acuerdo con el modelo de datos de microdatos de HTML5 , el meta elemento tiene un procesamiento especial. El valor de la propiedad </br>
+       de los microdatos es el contentatributo. Dado que este atributo nunca se muestra visiblemente, tenemos la configuración perfecta</br>
+       para cantidades ilimitadas de datos invisibles.
+    	
+    </p>
+        
+       
+</body>
+</html>

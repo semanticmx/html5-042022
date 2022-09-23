@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Capitulo 10</title>
+
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1 align="center"> MARCADO DE RESEÑAS</h1>
+	<P align="center">
+
+		Aquí hay otro ejemplo de cómo mejorar la web (y posiblemente las listas de resultados de búsqueda) a través del marcado: reseñas de</br> 
+                negocios y productos.</br></br>
+		Bien, hablemos de calificaciones. La parte más complicada de marcar una revisión es la calificación. De forma predeterminada, las</br>
+                calificaciones en el vocabulario de revisión están en una escala de 1 a 5, siendo 1 "terrible" y 5 "increíble". Si quieres usar una</br>
+                escala diferente, definitivamente puedes hacerlo. Pero hablemos primero de la escala predeterminada.
+
+	</P>
+
+	<table>
+		<tr>
+			<th scope="row">Propiedad</th>
+			<th>Descripcion</th>
+		</tr>
+
+		<tr>
+			<th>itemreviewed</th>
+			<th>El nombre del elemento que se está revisando. Puede ser un producto, servicio, negocio, & c.</th>
+		</tr>
+
+		<tr>
+			<th>rating</th>
+			<th>Una calificación numérica de la calidad del elemento, en una escala del 1 al 5. También puede ser un http://data-vocabulary.org/Rating vocabulario anidado para usar una escala no estándar.</th>
+		</tr>
+
+		<tr>
+			<th>reviewer</th>
+			<th>El nombre del autor que escribió la reseña.</th>
+		</tr>
+
+		<tr>
+			<th>dtreviewed</th>
+			<th>La fecha en que se revisó el elemento en formato de fecha ISO</th>
+		</tr>
+
+		<tr>
+			<th>summary</th>
+			<th>Un breve resumen de la reseña.</th>
+		</tr>
+
+		<tr>
+			<th>description</th>
+			<th>El cuerpo de la reseña.</th>
+		</tr>
+
+	</table>
+
+	<article itemscope 
+	         itemtype="http://data-vocabulary.org/Review">
+
+		<h1 itemprop="itemreviewed">Anna’s Pizzeria</h1>
+
+		 <p>★★★★☆ (<span itemprop="rating">4</span> stars out of 5)</p>
+
+		 <!-- <p itemprop="rating" itemscope
+                  itemtype="http://data-vocabulary.org/Rating">
+                  ★★★★★★★★★☆
+                  (<span itemprop="value">9</span> on a scale of
+                  <span itemprop="worst">0</span> to
+                  <span itemprop="best">10</span>)
+               </p>
+      -->
+
+		<p itemprop="summary">New York-style pizza right in historic downtown Apex</p>
+
+		<p itemprop="description">
+			    Food is top-notch. Atmosphere is just right for a “neighborhood
+		    	pizza joint.” The restaurant itself is a bit cramped; if you’re
+		    	overweight, you may have difficulty getting in and out of your
+			    seat and navigating between other tables. Used to give free
+		    	garlic knots when you sat down; now they give you plain bread
+			    and you have to pay for the good stuff. Overall, it’s a winner.
+		</p>
+
+
+		<p itemprop="location" 
+		   itemscope
+		   itemtype="http://data-vocabulary.org/Address">
+
+	        <span itemprop="street-address">100 North Salem Street</span><br>
+		      <span itemprop="locality">Apex</span>,
+		      <span itemprop="region">NC</span>
+		      <span itemprop="postal-code">27502</span><br>
+		      <span itemprop="country-name">USA</span>
+	   </p>
+
+	    <span itemprop="geo" 
+	          itemscope
+	          itemtype="http://data-vocabulary.org/Geo">
+
+	           <meta itemprop="latitude" content="35.730796" />
+	           <meta itemprop="longitude" content="-78.851426" />
+       </span>
+
+        <p>
+           — <span itemprop="reviewer">Mark Pilgrim</span>, last updated
+      
+             <time itemprop="dtreviewed" 
+                   datetime="2010-03-31">
+                    March 31, 2010
+             </time>
+        </p>
+
+
+</article>
+
+</body>
+</html>
