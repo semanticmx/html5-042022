@@ -1,4 +1,4 @@
-#MANIPULACIÓN DE LA HISTORIA POR DIVERSIÓN Y GANANCIAS
+# MANIPULACIÓN DE LA HISTORIA POR DIVERSIÓN Y GANANCIAS
 
 La barra de ubicación del navegador es quizás la pieza principal de interfaz de usuario más geek del mundo. Hay URL en vallas publicitarias, a los lados de los trenes 
 e incluso en grafitis callejeros. Combinado con el botón Atrás, fácilmente el botón más importante del navegador, tiene una forma poderosa de avanzar y retroceder a 
