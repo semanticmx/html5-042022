@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Capitulo 11</title>
+
+	<meta charset="utf-8">
+
+	<script type="text/javascript">
+		function setupHistoryClicks() {
+          addClicker(document.getElementById("photonext"));
+          addClicker(document.getElementById("photoprev"));
+
+        function addClicker(link) {
+            link.addEventListener("click", function(e) {
+            swapPhoto(link.href);
+            history.pushState(null, null, link.href);
+            e.preventDefault();
+            }, false);
+
+        function swapPhoto(href) {
+           var req = new XMLHttpRequest();
+           req.open("GET",
+               "http://diveintohtml5.info/examples/history/gallery/" +
+                  href.split("/").pop(),
+                  false);
+                   req.send(null);
+           }
+
+        if (req.status == 200) {
+           document.getElementById("gallery").innerHTML = req.responseText;
+           setupHistoryClicks();
+            return true;
+           }
+            return false;
+        }
+}
+	</script>
+</head> 
+<body>
+	<h1>MANIPULACIÓN DE LA HISTORIA POR DIVERSIÓN Y GANANCIAS</h1>
+
+	<p>
+		
+	</p>
+
+	<aside id="gallery">
+  <p class="photonav">
+    <a id="photonext" href="casey.html">Next &gt;</a>
+    <a id="photoprev" href="adagio.html">&lt; Previous</a>
+  </p>
+  <figure id="photo">
+    <img id="photoimg" src="gallery/1972-fer-500.jpg"
+            alt="Fer" width="500" height="375">
+    <figcaption>Fer, 1972</figcaption>
+  </figure>
+</aside>
+
+<p class="photonav">
+  <a id="photonext" href="brandy.html">Next &gt;</a>
+  <a id="photoprev" href="fer.html">&lt; Previous</a>
+</p>
+<figure id="photo">
+  <img id="photoimg" src="gallery/1984-casey-500.jpg"
+          alt="Casey" width="500" height="375">
+  <figcaption>Casey, 1984</figcaption>
+</figure>
+
+</body>
+</html>
