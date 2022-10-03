@@ -41,10 +41,26 @@
 	</script>
 </head> 
 <body>
-	<h1>MANIPULACIÓN DE LA HISTORIA POR DIVERSIÓN Y GANANCIAS</h1>
+	<h1 align="center">MANIPULACIÓN DE LA HISTORIA POR DIVERSIÓN Y GANANCIAS</h1>
 
-	<p>
-		
+	<p align="center">
+		La API de historial de HTML5 es solo un evento mas en el objeto. Puede usarlos para detectar la compatibilidad con la API de historial.</br>
+		Actualmente, el soporte se limita a las versiones más recientes de algunos navegadores, lo que coloca estas técnicas de lleno en el campo</br>
+		de la "mejora progresiva". window.historywindow</br></br>
+
+                Demuestra un patrón común: un artículo largo con una galería de fotos en línea asociada. En un navegador compatible, navegar por los enlaces Siguiente</br>
+		y Anterior en la galería de fotos actualizará la foto en su lugar y actualizará la URL en la barra de ubicación del navegador , sin activar una</br> 
+		actualización completa de la página. En los navegadores no compatibles, o, de hecho, en los navegadores compatibles en los que el usuario ha</br>
+		desactivado las secuencias de comandos, los enlaces simplemente funcionan como enlaces normales y lo llevan a una nueva página con una actualización</br>
+		completa de la página.</br></br>
+        
+		La history.pushState()función toma tres parámetros:</br></br>
+
+             --state puede ser cualquier estructura de datos JSON . Se devuelve al administrador de popstateeventos, del que aprenderá en un momento. No necesitamos</br>
+		rastrear ningún estado en esta demostración, así que lo dejé como null.</br></br>
+             --title puede ser cualquier cadena. Actualmente, este parámetro no es utilizado por los principales navegadores. Si desea configurar el título de la</br>
+		página, debe almacenarlo en el stateargumento y configurarlo manualmente en su popstatedevolución de llamada.</br></br>
+             --url puede ser, bueno, cualquier URL . Esta es la URL que desea que aparezca en la barra de ubicación del navegador.
 	</p>
 
 	<aside id="gallery">
